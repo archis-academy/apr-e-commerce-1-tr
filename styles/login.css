@@ -3,35 +3,39 @@
   --success: #88d498;
   --error: #e2434b;
 }
+.container {
+  margin-left: 129px;
+}
 .hug-login {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f5f5f5;
 }
 
 .login-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 805px;
+  height: 781px;
+  padding: 75px 0px 0px 0px;
+  gap: 0px;
+  border-radius: 0px 4px 4px 0px;
+  opacity: 0px;
 }
-.login-image img {
-  height: auto;
-}
+
 .login-form {
-  width: 60%;
+  width: 370px;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 .login-form h3 {
   font-family: "Inter", sans-serif;
   font-size: 36px;
   font-weight: 500;
   line-height: 30px;
+  text-align: left;
+  width: 345px;
+  height: 78px;
+  gap: 24px;
+  opacity: 0px;
 }
 .login-form h2 {
   font-family: "Poppins", sans-serif;
@@ -40,21 +44,25 @@
   line-height: 24px;
   margin-bottom: 30px;
   text-align: left;
+  width: 345px;
+  height: 78px;
+  gap: 24px;
+  opacity: 0px;
 }
 .login-input {
-  width: 80%;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   margin-bottom: 20px;
+  width: 370px;
 }
 .login-input input {
-  width: 100%;
   padding: 10px;
   margin-bottom: 10px;
   border: none;
   border-bottom: 2px solid #ccc;
   outline: none;
   transition: border-color 0.3s ease-in-out;
+  background-color: transparent;
 }
 .ep-text {
   width: 370px;
@@ -71,10 +79,13 @@
   border: none;
 }
 .login-buttons {
-  width: 80%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 371px;
+  height: 56px;
+  gap: 87px;
+  opacity: 0px;
 }
 .login-buttons button {
   transition: background-color 0.3s ease-in-out;
@@ -82,13 +93,14 @@
 .login-but {
   width: 143px;
   height: 56px;
-  gap: 16px;
+
   opacity: 0px;
   background: rgba(219, 68, 68, 1);
   border: none;
   border-radius: 4px;
   cursor: pointer;
   color: white;
+  font-family: "Poppins", sans-serif;
 }
 .login-but a {
   text-decoration: none;
@@ -104,9 +116,8 @@
   cursor: pointer;
 }
 
-
 /* Animation */
-.signup-form.error .error-text{
+.signup-form.error .error-text {
   visibility: visible;
 }
 .login-but:hover {
@@ -114,7 +125,7 @@
   color: rgba(219, 68, 68, 1);
 }
 
-.login-form {
+.container {
   animation: slide-in 0.5s ease-in-out forwards;
 }
 
@@ -167,6 +178,15 @@
     width: 0%;
   }
   100% {
+    width: 100%;
+  }
+}
+@media (max-width: 1482px) {
+  .hug-login {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .login-image{
     width: 100%;
   }
 }
