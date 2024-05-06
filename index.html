@@ -1,13 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exclusive E-Commerce</title>
-    <link rel="stylesheet" href="styles/shared.css">
-    <link rel="stylesheet" href="styles/index.css">
-  </head>
-  <body>
-    <script src="app.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exclusive E-Commerce</title>
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <!-- Poppins Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <!-- CSS Imports -->
+  <link rel="stylesheet" href="styles/shared.css">
+  <link rel="stylesheet" href="styles/index.css">
+
+</head>
+
+<body>
+  <!-- HASIM / TODAY'S PRODUCT SECTION START classnames = "tdpr" -->
+  <section class="tdpr">
+    <div class="tpdr-container">
+      <div class="tdpr-topic">
+        <span class="topicRectangle"></span>
+        <span class="topicText">Today's</span>
+      </div>
+      <div class="tdpr-heading">
+        <div class="tdpr-heading-texts">
+          <span class="tdpr-heading-text">Flash Sales</span>
+          <div class="tdpr-heading-count">
+            <div class="tdpr-countTimes">
+              <span class="tdpr-timeName"></span>
+              <span class="tdpr-timeCount" id="tdpr-day"></span>
+            </div>
+            <span class="ikiNokta">:</span>
+            <div class="countTimes">
+              <span class="tdpr-timeName"></span>
+              <span class="tdpr-timeCount" id="tdpr-hour"></span>
+            </div>
+            <span class="ikiNokta">:</span>
+            <div class="countTimes">
+              <span class="tdpr-timeName"></span>
+              <span class="tdpr-timeCount" id="tdpr-minute"></span>
+            </div>
+            <span class="ikiNokta">:</span>
+            <div class="countTimes">
+              <span class="tdpr-timeName"></span>
+              <span class="tdpr-timeCount" id="tdpr-second"></span>
+            </div>
+          </div>
+        </div>
+        <div class="tdpr-heading-arrows">
+          <span class="tdpr-arrow" id="tdpr-arrow-left">
+            <img src="./images/todays-product/icons_arrow-left.png" alt="">
+          </span>
+          <span class="tdpr-arrow" id="tdpr-arrow-right">
+            <img src="./images/todays-product/icons_arrow-right.png" alt="">
+          </span>
+        </div>
+      </div>
+      <div class="tdpr-cards">
+        <div class="tdpr-cards-container">
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="todaysPRoduct.js"></script>
+  <!-- HASIM / TODAY'S PRODUCT SECTION END -->
+
+  <script src="app.js"></script>
+  
+</body>
+
 </html>
