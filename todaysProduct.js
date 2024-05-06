@@ -25,6 +25,24 @@ const data = {
       amount: 400,
       discount: 25,
     },
+    {
+      image: "./images/todays-product/img-monitor.png",
+      title: "IPS LCD Gaming Monitor",
+      amount: 400,
+      discount: 30,
+    },
+    {
+      image: "./images/todays-product/img-armchair.png",
+      title: "S-Series Comfort Chair ",
+      amount: 400,
+      discount: 25,
+    },
+    {
+      image: "./images/todays-product/img-keyboard.png",
+      title: "AK-900 Wired Keyboard",
+      amount: 1160,
+      discount: 35,
+    },
   ],
 };
 
@@ -181,13 +199,17 @@ const arrowRight = document.querySelector("#tdpr-arrow-right");
 let deger = 0;
 
 arrowRight.addEventListener("click", ()=>{
-    deger += -270;
+    if (deger>(data.flashData.length-3)*-270) {
+      deger += -270;
     cardContainer.style.left=`${deger}px`;
+    }
 })
 
 arrowLeft.addEventListener("click", ()=>{
-  deger += 270;
+  if(deger<0){
+    deger += 270;
   cardContainer.style.left=`${deger}px`;
+  }
 })
 
 
