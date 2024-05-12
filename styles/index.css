@@ -28,7 +28,7 @@ p {
   height: 18px;
   gap: 0px;
   opacity: 0px;
-
+  margin-bottom: 0;
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -117,6 +117,7 @@ p {
   gap: 48px;
   list-style: none;
   cursor: pointer;
+  margin-bottom: 0;
 }
 
 .menu li:hover {
@@ -176,84 +177,46 @@ p {
   margin-right: 45px;
   top: 0;
 }
-
-.carousel {
-  position: absolute;
-  overflow: hidden;
+.slide {
   width: 892px;
   height: 344px;
-  top: 182px;
-  left: 413px;
-  gap: 0px;
-  opacity: 0px;
 }
-
-.carousel-inner {
-  position: relative;
+.carosuel_images {
+  width: 892px;
+  height: 344px;
+  object-fit: contain;
+  margin: auto;
 }
-
+.carosuel_images img{
+ max-width: 350px;
+ max-height: 350px;
+  margin: auto;
+}
 .carousel-item {
   position: relative;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  z-index: 999;
 }
 
-.carousel-item.active {
-  opacity: 1;
+.indicator {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
-
-#myCarousel .carousel-item {
-  top: 182px;
-  position: absolute ;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#myCarousel .carousel-item img {
-  object-fit: cover;  
-  position: fixed;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
-  background-color: rgba(0, 0, 0, 0.3);
+.carousel-indicators span {
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
-  display: flex;
-  color: #fff;
-  font-size: 24px;
+  background-color: #ccc;
+  display: inline-block;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-  z-index: 999;
+  transition: all 0.3s ease-in-out;
+  margin-right: 5px;
 }
 
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-  background-color: rgba(0, 0, 0, 0.5);
+.carousel-indicators span:hover {
+  background-color: orangered;
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  width: 20px;
-  height: 20px;
-}
-
-.visually-hidden {
-  position: relative;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+.carousel-indicators span.active {
+  background-color: orangered;
 }
