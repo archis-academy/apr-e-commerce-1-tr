@@ -377,4 +377,22 @@ visibility: hidden;
   visibility: visible;
 }
 
+@media screen and (max-width: 650px) {
+  .bsc-header-and-control{
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .bcs-control{
+    align-self: flex-end;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .bcs-browse-by-title{
+    font-size: 25px;
+  }
+}
+
 /* GULSAH BROWSE BY CATEGORY END */
