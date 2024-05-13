@@ -220,9 +220,11 @@ p {
   background-color: orangered;
 }
 
+
 .carousel-indicators span.active {
   background-color: orangered;
 }
+
 
 /* Animatoin Start */
 .carousel-item {
