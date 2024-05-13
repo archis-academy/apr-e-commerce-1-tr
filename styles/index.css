@@ -1,3 +1,4 @@
+/* Yigit Header Start */
 p {
   display: block;
   margin-block-start: 0px;
@@ -180,6 +181,8 @@ p {
 .slide {
   width: 892px;
   height: 344px;
+  display: flex;
+  justify-content: center;
 }
 .carosuel_images {
   width: 892px;
@@ -187,9 +190,9 @@ p {
   object-fit: contain;
   margin: auto;
 }
-.carosuel_images img{
- max-width: 350px;
- max-height: 350px;
+.carosuel_images img {
+  max-width: 350px;
+  max-height: 350px;
   margin: auto;
 }
 .carousel-item {
@@ -220,3 +223,36 @@ p {
 .carousel-indicators span.active {
   background-color: orangered;
 }
+
+/* Animatoin Start */
+.carousel-item {
+  animation: slide-in 2s backwards;
+}
+.line-bottom,
+.line-left,
+.carousel-item {
+  animation: slide-in 0.5s ease-out forwards;
+}
+
+.header-tree,
+.header-down,
+.header-list-container,
+.header-item-container,
+.header-list-item {
+  animation: slide-in 0.3s alternate;
+}
+.menu,
+.menu_icons,
+.menu_icons_container,
+.searchIcon,
+.busketIcon {
+  animation: slide-in 0.4s cubic-bezier;
+}
+@keyframes slide-in {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+/* Animation End */
+/* Yigit Header End */
