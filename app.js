@@ -19,20 +19,22 @@ const countDown = (bitisZamani) => {
   minute.textContent = dakikalar < 10 ? `0${dakikalar}` : dakikalar;
   second.textContent = saniyeler < 10 ? `0${saniyeler}` : saniyeler;
   if (kalanZaman <= 0) {
-    clearInterval(geriSayimID);
+    clearInterval(countDownInterval);
   }
 };
 
 const countDownInterval = setInterval(() => {
-  countDown(new Date("2024-05-12 00:00:00").getTime());
+  countDown(new Date("2024-05-20 00:00:00").getTime());
 }, 1000);
 
 
 //Fetch API codes
 const endpoint = "https://fakestoreapi.com/products";
+let allProducts = [];
 async function getProducts() {
   const response = await fetch(endpoint);
   const products = await response.json();
+  allProducts = [...products];
   flashSalesdata = products.slice(0,8);
   flashSalesArrow(flashSalesdata)
   renderFlashSalesProduct(flashSalesdata);
@@ -44,7 +46,7 @@ getProducts();
 function renderFlashSalesProduct(data) {
   const todaysCards = document.querySelector(".tdpr-cards-container");
 
-  const products = data
+  const flashSaleproducts = data
     .map((item) => {
       return `<div class="tpdr-card-item">
   <div class="tpdr-card-image-container" style="background-image: url('${
@@ -52,7 +54,7 @@ function renderFlashSalesProduct(data) {
   }');"> <div class="tpdr-card-icons-container">
       <span class="tpdr-card-discount">-50%</span>
       <div class="tpdr-card-icons">
-        <a href="#" class="tpdr-icon">
+        <a href="#" class="tpdr-icon" id="fav-icon-${item.id}" onclick="addToWishlist(${item.id})">
           <img src="./images/todays-product/heartsmall.png" alt="Heart">
         </a>
         <a href="#" class="tpdr-icon">
@@ -60,7 +62,7 @@ function renderFlashSalesProduct(data) {
         </a>
       </div>
     </div>
-    <a href="#" class="tpdr-addCart">Add To Cart</a>
+    <a href="#" class="tpdr-addCart" onclick="addToCart(${item.id})" >Add To Cart</a>
   </div>
   <div class="tpdr-card-name">${item.title}</div>
   <div class="tpdr-card-amount">
@@ -74,8 +76,41 @@ function renderFlashSalesProduct(data) {
     })
     .join("");
 
-  todaysCards.innerHTML = products;
+  todaysCards.innerHTML = flashSaleproducts;
 }
+
+//Add To Wishlist Codes
+function addToWishlist(productId) {
+  const favIcon = document.getElementById(`fav-icon-${productId}`);
+  favIcon.classList.toggle("added-wish-list");
+  const wishlistProducts = JSON.parse(localStorage.getItem("wishlistProducts")) || [];
+  const isProductExist = wishlistProducts.some(element=>element.id === productId);
+  if (!isProductExist) {
+    const productToAdd = allProducts.find(product=>product.id ===productId);
+    localStorage.setItem("wishlistProducts", JSON.stringify([...wishlistProducts, productToAdd]));
+  } else {
+    const newProducts = wishlistProducts.filter(element=>element.id!==productId);
+    localStorage.setItem("wishlistProducts", JSON.stringify(newProducts));
+  }
+}
+
+//Add to Cart Codes
+function addToCart(productId) {
+  const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
+  const isProductExist = cartProducts.some(element=>element.id === productId);
+  if (!isProductExist) {
+    const productToAdd = allProducts.find(product=>product.id ===productId);
+    localStorage.setItem("cartProducts", JSON.stringify([...cartProducts, productToAdd]));
+  } else {
+    const productIncremented = cartProducts.find(product=>product.id ===productId);
+    let cartCount = cartProducts.cartCount ? cartProducts.cartCount : 1;
+    cartCount++;
+    productIncremented.cartCount = cartCount;
+    const newProducts = cartProducts.filter(element=>element.id!==productId);
+    localStorage.setItem("cartProducts", JSON.stringify([...newProducts, productIncremented]));
+  }
+}
+
 
 //Cards Left-Right Codes
 function flashSalesArrow(data){
@@ -102,5 +137,7 @@ arrowLeft.addEventListener("click", () => {
   }
 });
 }
+
+
 
 //HASIM - FLASHSALES SECTION END

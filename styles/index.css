@@ -181,6 +181,10 @@
   transition: all 0.5s;
 }
 
+.tpdr-icon.added-wish-list {
+  box-shadow: 2px 2px 8px black, -2px -2px 8px black;
+}
+
 .tpdr-icon:hover {
   box-shadow: 2px 2px 8px black, -2px -2px 8px black;
 }
