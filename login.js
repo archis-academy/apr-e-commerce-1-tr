@@ -39,7 +39,7 @@ loginButton.addEventListener("click", (event) => {
         user.username === emailPhoneInput.value &&
         user.password === passwordInput.value
       ) {
-        console.log("Login successful");
+        alert("Login successful");
         window.location.href = "index.html";
       }
     });
