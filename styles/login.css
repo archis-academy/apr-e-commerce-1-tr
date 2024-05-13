@@ -1,0 +1,205 @@
+/* Yigit/Login Css Strat */
+:root {
+  --success: #88d498;
+  --error: #e2434b;
+}
+.container {
+  margin-left: 129px;
+}
+.hug-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-image {
+  width: 805px;
+  height: 781px;
+  padding: 75px 0px 0px 0px;
+  gap: 0px;
+  border-radius: 0px 4px 4px 0px;
+  opacity: 0px;
+}
+
+.login-form {
+  width: 370px;
+  height: 100%;
+}
+.login-form h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 30px;
+  text-align: left;
+  width: 345px;
+  height: 78px;
+  gap: 24px;
+  opacity: 0px;
+}
+.login-form h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 30px;
+  text-align: left;
+  width: 345px;
+  height: 78px;
+  gap: 24px;
+  opacity: 0px;
+}
+.login-input {
+  display: inline-flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 370px;
+}
+.login-input input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+  background-color: transparent;
+}
+.ep-text {
+  width: 370px;
+  height: 32px;
+  gap: 8px;
+  opacity: 0px;
+  border: none;
+}
+.p-text {
+  width: 370px;
+  height: 32px;
+  gap: 8px;
+  opacity: 0px;
+  border: none;
+}
+.login-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 371px;
+  height: 56px;
+  gap: 87px;
+  opacity: 0px;
+}
+.login-buttons button {
+  transition: background-color 0.3s ease-in-out;
+}
+.login-but {
+  width: 143px;
+  height: 56px;
+
+  opacity: 0px;
+  background: rgba(219, 68, 68, 1);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+.login-but a {
+  text-decoration: none;
+}
+.fp-text {
+  color: rgba(219, 68, 68, 1);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* Animation */
+.signup-form.error .error-text {
+  visibility: visible;
+}
+.login-but:hover {
+  background: transparent;
+  color: rgba(219, 68, 68, 1);
+}
+
+.container {
+  animation: slide-in 0.5s ease-in-out forwards;
+}
+
+.login-input input:focus {
+  border-color: rgba(219, 68, 68, 1);
+}
+
+.underline {
+  animation: slide-in 0.5s ease-in-out forwards;
+}
+.underline {
+  width: 0%;
+  height: 2px;
+  transition: width 0.3s ease-in-out;
+}
+.login-input input:focus ~ .underline {
+  width: 100%;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.login-input input {
+  animation: fade-in 0.5s ease-in-out forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.underline {
+  animation: slide-in 0.5s ease-in-out forwards;
+}
+
+@keyframes slide-in {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@media (max-width: 1482px) {
+  .hug-login {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .login-image{
+    width: 100%;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.hug-login {
+  animation: fade-in 1s ease-in-out;
+}
+/* Yigit/Login Css End */
