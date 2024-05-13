@@ -229,3 +229,152 @@
   text-decoration: line-through;
 }
 /*HASIM / TODAY'S PRODUCT END*/
+
+/* GULSAH BROWSE BY CATEGORY START */
+
+.bcs-section{
+display: flex;
+flex-direction: column;
+row-gap: 60px;
+width: 75%;
+max-width: 1350px;
+margin-top: 150px;
+margin-left: auto;
+margin-right: auto;
+padding-bottom: 75px;
+}
+
+.bcs-header-and-control{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bcs-categories-header{
+  display: flex;
+  width: 126px;
+}
+
+.bcs-red-rectangle{
+  width: 20px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: rgba(219, 68, 68, 1);
+}
+
+.bcs-categories-title{
+  color: rgba(219, 68, 68, 1);
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  margin: auto;
+}
+
+.bcs-browse-by-title{
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 48px;
+  color: rgba(0, 0, 0, 1);
+  margin-top: 20px;
+}
+
+.bsc-header-and-control{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.bcs-control{
+  display: flex;
+  height: max-content;
+  gap: 8px;
+}
+
+.bcs-control-arrow-left{
+  transform: scaleX(-1);
+  padding: 11px;
+  border-radius: 50px;
+  background-color: rgba(245, 245, 245, 1);
+  border-style: none;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.bcs-control-arrow-right{
+  padding: 11px;
+  border-radius: 50px;
+  background-color: rgba(245, 245, 245, 1);
+  border-style: none;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.bcs-control-arrow-left:hover{
+  box-shadow: 2px 2px 8px black, -2px -2px 8px black;
+}
+
+.bcs-control-arrow-right:hover{
+  box-shadow: 2px 2px 8px black, -2px -2px 8px black;
+}
+
+.bcs-categories{
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  overflow: hidden;
+}
+
+.bcs-category-box{
+  min-width: 170px;
+  min-height: 145px;
+  border-radius: 4px;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.3);
+  border-style: solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  position: relative;
+}
+
+.bcs-category-box p{
+  font-family: "Poppins", sans-serif;
+  color: rgba(0, 0, 0, 1);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  transition: all 0.5s;
+}
+
+.bcs-category-box:hover{
+  border-style: none;
+  background-color: rgba(219, 68, 68, 1);
+}
+
+.bcs-category-box:hover .bcs-text{
+  color: white;
+}
+
+.bcs-image-2{
+position: absolute;
+left: auto;
+right: auto;
+margin-bottom: 39px;
+visibility: hidden;
+}
+
+.bcs-category-box:hover .bcs-image{
+visibility: hidden;
+}
+
+.bcs-category-box:hover .bcs-image-2{
+  visibility: visible;
+}
+
+/* GULSAH BROWSE BY CATEGORY END */
