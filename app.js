@@ -1,4 +1,3 @@
-
 //HASIM - FLASHSALES SECTION START
 // Count Down Codes
 const day = document.getElementById("tdpr-day");
@@ -27,7 +26,6 @@ const countDownInterval = setInterval(() => {
   countDown(new Date("2024-05-20 00:00:00").getTime());
 }, 1000);
 
-
 //Fetch API codes
 const endpoint = "https://fakestoreapi.com/products";
 let allProducts = [];
@@ -35,8 +33,8 @@ async function getProducts() {
   const response = await fetch(endpoint);
   const products = await response.json();
   allProducts = [...products];
-  flashSalesdata = products.slice(0,8);
-  flashSalesArrow(flashSalesdata)
+  flashSalesdata = products.slice(0, 8);
+  flashSalesArrow(flashSalesdata);
   renderFlashSalesProduct(flashSalesdata);
 }
 
@@ -54,7 +52,9 @@ function renderFlashSalesProduct(data) {
   }');"> <div class="tpdr-card-icons-container">
       <span class="tpdr-card-discount">-50%</span>
       <div class="tpdr-card-icons">
-        <a href="#" class="tpdr-icon" id="fav-icon-${item.id}" onclick="addToWishlist(${item.id})">
+        <a href="#" class="tpdr-icon" id="fav-icon-${
+          item.id
+        }" onclick="addToWishlist(${item.id})">
           <img src="./images/todays-product/heartsmall.png" alt="Heart">
         </a>
         <a href="#" class="tpdr-icon">
@@ -62,13 +62,16 @@ function renderFlashSalesProduct(data) {
         </a>
       </div>
     </div>
-    <a href="#" class="tpdr-addCart" onclick="addToCart(${item.id})" >Add To Cart</a>
+    <a href="#" class="tpdr-addCart" onclick="addToCart(${
+      item.id
+    })" >Add To Cart</a>
   </div>
   <div class="tpdr-card-name">${item.title}</div>
   <div class="tpdr-card-amount">
-    <span class="tdpr-amount-discounted">$${
-      (item.price - (item.price / 2)).toFixed()
-    }</span>
+    <span class="tdpr-amount-discounted">$${(
+      item.price -
+      item.price / 2
+    ).toFixed()}</span>
     <span class="tdpr-amount-real">$${item.price}</span>
   </div>
   <div class="stars"></div>
@@ -83,13 +86,23 @@ function renderFlashSalesProduct(data) {
 function addToWishlist(productId) {
   const favIcon = document.getElementById(`fav-icon-${productId}`);
   favIcon.classList.toggle("added-wish-list");
-  const wishlistProducts = JSON.parse(localStorage.getItem("wishlistProducts")) || [];
-  const isProductExist = wishlistProducts.some(element=>element.id === productId);
+  const wishlistProducts =
+    JSON.parse(localStorage.getItem("wishlistProducts")) || [];
+  const isProductExist = wishlistProducts.some(
+    (element) => element.id === productId
+  );
   if (!isProductExist) {
-    const productToAdd = allProducts.find(product=>product.id ===productId);
-    localStorage.setItem("wishlistProducts", JSON.stringify([...wishlistProducts, productToAdd]));
+    const productToAdd = allProducts.find(
+      (product) => product.id === productId
+    );
+    localStorage.setItem(
+      "wishlistProducts",
+      JSON.stringify([...wishlistProducts, productToAdd])
+    );
   } else {
-    const newProducts = wishlistProducts.filter(element=>element.id!==productId);
+    const newProducts = wishlistProducts.filter(
+      (element) => element.id !== productId
+    );
     localStorage.setItem("wishlistProducts", JSON.stringify(newProducts));
   }
 }
@@ -97,47 +110,57 @@ function addToWishlist(productId) {
 //Add to Cart Codes
 function addToCart(productId) {
   const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
-  const isProductExist = cartProducts.some(element=>element.id === productId);
+  const isProductExist = cartProducts.some(
+    (element) => element.id === productId
+  );
   if (!isProductExist) {
-    const productToAdd = allProducts.find(product=>product.id ===productId);
-    localStorage.setItem("cartProducts", JSON.stringify([...cartProducts, productToAdd]));
+    const productToAdd = allProducts.find(
+      (product) => product.id === productId
+    );
+    productToAdd.cartCount =1;
+    localStorage.setItem(
+      "cartProducts",
+      JSON.stringify([...cartProducts, productToAdd])
+    );
   } else {
-    const productIncremented = cartProducts.find(product=>product.id ===productId);
-    let cartCount = cartProducts.cartCount ? cartProducts.cartCount : 1;
+    const productIncremented = cartProducts.find(
+      (product) => product.id === productId
+    );
+    let cartCount = productIncremented.cartCount;
     cartCount++;
     productIncremented.cartCount = cartCount;
-    const newProducts = cartProducts.filter(element=>element.id!==productId);
-    localStorage.setItem("cartProducts", JSON.stringify([...newProducts, productIncremented]));
+    const newProducts = cartProducts.filter(
+      (element) => element.id !== productId
+    );
+    localStorage.setItem(
+      "cartProducts",
+      JSON.stringify([...newProducts, productIncremented])
+    );
   }
 }
-
 
 //Cards Left-Right Codes
-function flashSalesArrow(data){
+function flashSalesArrow(data) {
   const cardContainer = document.querySelector(".tdpr-cards-container");
-const cardWrappper = document.querySelector(".tdpr-cards");
-const cardItem = document.querySelectorAll(".tpdr-card-item");
-console.log();
-const arrowLeft = document.querySelector("#tdpr-arrow-left");
-const arrowRight = document.querySelector("#tdpr-arrow-right");
-let deger = 0;
+  console.log();
+  const arrowLeft = document.querySelector("#tdpr-arrow-left");
+  const arrowRight = document.querySelector("#tdpr-arrow-right");
+  let deger = 0;
 
-arrowRight.addEventListener("click", () => {
-  const offsetWidth = cardContainer.offsetWidth;
-  if (deger > (data.length - offsetWidth / 290) * -290) {
-    deger += -290;
-    cardContainer.style.left = `${deger}px`;
-  }
-});
+  arrowRight.addEventListener("click", () => {
+    const offsetWidth = cardContainer.offsetWidth;
+    if (deger > (data.length - offsetWidth / 290) * -290) {
+      deger += -290;
+      cardContainer.style.left = `${deger}px`;
+    }
+  });
 
-arrowLeft.addEventListener("click", () => {
-  if (deger < 0) {
-    deger += 290;
-    cardContainer.style.left = `${deger}px`;
-  }
-});
+  arrowLeft.addEventListener("click", () => {
+    if (deger < 0) {
+      deger += 290;
+      cardContainer.style.left = `${deger}px`;
+    }
+  });
 }
-
-
 
 //HASIM - FLASHSALES SECTION END
