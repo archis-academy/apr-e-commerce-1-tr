@@ -108,5 +108,4 @@ arrowLeft.addEventListener("click", () => {
 // GULSAH - BROWSE BY CATEGORY SECTION START
 
 
-
 // GULSAH - BROWSE BY CATEGORY SECTION END
