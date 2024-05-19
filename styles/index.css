@@ -7,7 +7,10 @@ p {
   margin-inline-end: 0px;
   unicode-bidi: isolate;
 }
-
+.header-tree {
+  max-width: 1920px;
+  margin: 0 auto;
+}
 .top-header {
   display: flex;
   gap: 0px;
@@ -16,6 +19,7 @@ p {
   height: 48px;
   justify-content: center;
   align-items: center;
+  width: 1920px;
 }
 .top-summer {
   color: white;
@@ -84,10 +88,15 @@ p {
 }
 
 .header-down {
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
   align-items: center;
-  flex-direction: row;
+  gap: 148px;
+  width: 1170px;
+  height: 38px;
+  top: 88px;
+  gap: 148px;
+  opacity: 0px;
+  margin-left: 135px;
 }
 .header_container {
   display: flex;
@@ -95,6 +104,7 @@ p {
   align-items: center;
   flex-direction: row;
   gap: 100px;
+  white-space: nowrap;
 }
 .dropdown-container {
   position: absolute;
@@ -115,43 +125,114 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 48px;
   list-style: none;
   cursor: pointer;
   margin-bottom: 0;
+  width: 367px;
+  height: 24px;
+  gap: 48px;
+  opacity: 0px;
+  width: auto;
 }
-
+.menu a {
+  color: #000;
+}
+.menu a:hover {
+  color: #000;
+}
+.search_container {
+  display: flex;
+}
 .menu li:hover {
   text-decoration: underline;
 }
+
 .searchIcon {
   position: relative;
   cursor: pointer;
 }
-
-.searchIcon:hover .search_input {
-  width: 200px;
+.search_container li {
+  display: flex;
+  padding: 7px 12px 7px 20px;
+  gap: 10px;
 }
-.line-bottom img {
+.search_container input {
+  width: 211px;
+  border-radius: 4px;
+}
+.line-bottom {
+  display: flex;
   width: 1920px;
+  height: 1px;
   justify-content: center;
   align-items: center;
-  display: flex;
+  flex-shrink: 0;
+  background: #000;
 }
-.search_input {
-  width: 0;
-  height: 30px;
-  border: none;
-  border-radius: 5px;
+.search_results {
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  max-width: 300px;
+  width: 100%;
+  z-index: 1000;
+  display: none;
+  max-height: 300px;
+  overflow-y: auto;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  top: 100%; /* Arama çubuğunun altına yerleştirmek için */
+}
 
-  transition: width 0.3s ease;
-  position: relative;
-  top: 0;
-  right: 0;
+.search-result-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
 }
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.search-result-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover; /* Görselin div'e sığmasını sağlar */
+  margin-right: 10px;
+}
+
+.search-result-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-result-info h4 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.search-result-info p {
+  margin: 0;
+  color: #888;
+  font-size: 12px;
+}
+
+.search_container {
+  position: relative; /* Arama çubuğunun üstünde görünmemesi için */
+}
+
+.search-result-info p {
+  margin: 0;
+  color: #888;
+  font-size: 12px;
+}
+
 .header-list-container {
   width: 217px;
+  height: 344px;
+  margin-top: 40px;
   margin-left: 135px;
+  gap: 16px;
   opacity: 0px;
 }
 .header-list-item {
@@ -175,8 +256,13 @@ p {
   align-items: center;
 }
 .line-left {
-  margin-right: 45px;
-  top: 0;
+  width: 0.5px;
+  height: 425px;
+  top: 142px;
+  left: 368px;
+  gap: 0px;
+  opacity: 0.3px;
+  border: 0.5px solid rgba(0, 0, 0, 1);
 }
 .slide {
   width: 892px;
@@ -220,23 +306,11 @@ p {
   background-color: orangered;
 }
 
-
 .carousel-indicators span.active {
   background-color: orangered;
 }
 
-
-
 /* Animatoin Start */
-.carousel-item {
-  animation: slide-in 2s backwards;
-}
-.line-bottom,
-.line-left,
-.carousel-item {
-  animation: slide-in 0.5s ease-out forwards;
-}
-
 .header-tree,
 .header-down,
 .header-list-container,
@@ -244,6 +318,7 @@ p {
 .header-list-item {
   animation: slide-in 0.3s alternate;
 }
+
 .menu,
 .menu_icons,
 .menu_icons_container,
@@ -251,11 +326,33 @@ p {
 .busketIcon {
   animation: slide-in 0.4s cubic-bezier;
 }
-@keyframes slide-in {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
+/* Animation End */
+@media only screen and (max-width: 768px) {
+  .header-tree {
+    padding: 0 10px;
+  }
+  
+  .header-down {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .header-list-container {
+    display: block;
+    margin-top: 20px;
+  }
+
+  .header-item-container {
+    margin-right: 20px; /* Listenin sağ tarafından biraz boşluk bırakmak için */
+  }
+
+}
+
+@media screen and (max-width: 755px) {
+  .line-left {
+    display: none;
   }
 }
-/* Animation End */
+
 /* Yigit Header End */
