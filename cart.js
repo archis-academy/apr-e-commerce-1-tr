@@ -4,7 +4,6 @@ let cartTotalQuantity =
   JSON.parse(localStorage.getItem("cartTotalQuantity")) || 0;
 const listContainer = document.querySelector(".crt-productlist");
 
-
 //Icon Set Codes
 const setIconsQuantity = () => {
   const wishListIcon = document.getElementById("crt-wishlist-quantity");
@@ -26,19 +25,34 @@ const setIconsQuantity = () => {
 
 setIconsQuantity();
 
-
 //Total Amount Set Codes
 const setTotalAmount = () => {
+  const cartSubTotalElement = document.getElementById("crt-subtotal");
+  const cartShippingElement = document.getElementById("crt-shipping");
+  const cartTotalElement = document.getElementById("crt-total");
+
   let cartTotalAmount = 0;
   cartList.forEach((element) => {
     cartTotalAmount =
       cartTotalAmount + element.cartCount * element.price.toFixed();
   });
-
+  if (cartList.length > 0) {
+    cartSubTotalElement.textContent = `$ ${cartTotalAmount}`;
+    if (cartTotalAmount >= 100) {
+      cartTotalElement.textContent = `$ ${cartTotalAmount}`;
+      cartShippingElement.textContent = "Free";
+    } else {
+      cartTotalElement.textContent = `$ ${cartTotalAmount + 50}`;
+      cartShippingElement.textContent = "$50";
+    }
+  } else {
+    cartSubTotalElement.textContent = `$0`;
+    cartTotalElement.textContent = `$0`;
+    cartShippingElement.textContent = "";
+  }
 };
 
 setTotalAmount();
-
 
 //Set Total Codes
 const setTotal = (productId, productIncremented) => {
@@ -71,7 +85,6 @@ const setTotal = (productId, productIncremented) => {
   }
 };
 
-
 //Increment - Decrement Codes
 const incrementSubtotal = (productId) => {
   const productIncremented = cartList.find(
@@ -98,15 +111,17 @@ const decrementSubtotal = (productId) => {
     localStorage.setItem("cartProducts", JSON.stringify(newProducts));
     cartList = newProducts;
     renderProductList();
+    setTotalAmount();
   }
   setIconsQuantity();
 };
 
 //Render Codes
 function renderProductList() {
-  const cartProductList = cartList
-    .map((item) => {
-      return `<div class="crt-product-list-item">
+  if (cartList.length > 0) {
+    const cartProductList = cartList
+      .map((item) => {
+        return `<div class="crt-product-list-item">
    <div class="crt-product-titles">
      <div class="crt-micro-img-container">
        <img src="${item.image}" alt="">
@@ -132,13 +147,17 @@ function renderProductList() {
         </div>
    </div>
    <div class="crt-product-titles" id="subtotal-${item.id}">$${
-        item.price.toFixed() * item.cartCount
-      }</div>
+          item.price.toFixed() * item.cartCount
+        }</div>
  </div>`;
-    })
-    .join("");
+      })
+      .join("");
 
-  listContainer.innerHTML = cartProductList;
+    listContainer.innerHTML = cartProductList;
+  } else {
+    const empty = `<h1 class="crt-empty">Cart Is Empty</h1>`;
+    listContainer.innerHTML = empty;
+  }
 }
 
 renderProductList();
