@@ -4,10 +4,239 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exclusive E-Commerce Cart</title>
-    <link rel="stylesheet" href="styles/shared.css">
-    <link rel="stylesheet" href="styles/cart.css">
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Poppins Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS Imports -->
+    <link rel="stylesheet" href="styles/shared.css" />
+    <link rel="stylesheet" href="styles/cart.css" />
   </head>
   <body>
-    
+    <!-- HASIM - CARTPAGE START class= "crt"-->
+    <div class="crt-header-top">
+      <div class="crt-header-top-wrapper">
+        <div class="crt-header-top-text">
+          Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
+          <a href="index.html"> ShopNow</a>
+        </div>
+        <div class="crt-header-top-language">
+          <span>English</span>
+          <img src="./images/cart-page/DropDown.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="cartpage-container">
+      <header class="crt-header">
+        <div class="crt-header-bottom">
+          <nav class="crt-navbar">
+            <div class="crt-navbar-logo">Exclusive</div>
+            <div class="crt-navbar-menu">
+              <a href="index.html"
+                ><span class="crt-navbar-menu-item">Home</span></a
+              >
+              <a href="#"><span class="crt-navbar-menu-item">Contact</span></a>
+              <a href="#"><span class="crt-navbar-menu-item">About</span></a>
+              <a href="login.html"
+                ><span class="crt-navbar-menu-item">Sign Up</span></a
+              >
+            </div>
+          </nav>
+          <div class="crt-header-icons">
+            <div class="crt-header-search">
+              <input type="text" placeholder="What are you looking for?" />
+              <span class="crt-header-search-icon"
+                ><img src="./images/cart-page/Vector.png" alt=""
+              /></span>
+            </div>
+            <div class="crt-header-cart-icons">
+              <span class="crt-header-cart-icons-wrapper">
+                <span
+                  class="crt-header-cart-icons-quantity"
+                  id="crt-wishlist-quantity"
+                  >0</span
+                >
+                <img src="./images/cart-page/heart.png" alt="" />
+              </span>
+              <span class="crt-header-cart-icons-wrapper">
+                <span
+                  class="crt-header-cart-icons-quantity"
+                  id="crt-cartlist-quantity"
+                  >0</span
+                >
+                <img src="./images/cart-page/Cart1.png" alt="" />
+              </span>
+              <span class="crt-header-cart-icons-wrapper">
+                <img src="./images/cart-page/user.png" alt="" />
+              </span>
+            </div>
+          </div>
+        </div>
+      </header>
+      <hr />
+      <section class="crt-body">
+        <div class="crt-cart-space">
+          <span>Home / </span>
+          <span> Cart</span>
+        </div>
+        <div class="crt-product-list-container">
+          <div class="crt-product-list-item">
+            <div class="crt-product-titles">Product</div>
+            <div class="crt-product-titles">Price</div>
+            <div class="crt-product-titles">Quantity</div>
+            <div class="crt-product-titles">Subtotal</div>
+          </div>
+          <div class="crt-productlist"></div>
+        </div>
+        <!-- Cart Buttons -->
+        <div class="crt-bottom-buttons">
+          <button
+            onclick="location.href='index.html';"
+            class="crt-bottom-button"
+          >
+            Return To Shop
+          </button>
+          <button class="crt-bottom-button">Update Cart</button>
+        </div>
+        <!-- Cart Bottom -->
+        <div class="crt-bottom-total">
+          <div class="crt-coupon">
+            <div class="crt-coupon-input-container">
+              <input type="text" placeholder="Coupon Code" />
+            </div>
+            <div class="crt-coupon-button-container">
+              <button class="crt-coupon-button">Apply Coupon</button>
+            </div>
+          </div>
+
+          <!-- Cart Bottom Container -->
+          <div class="crt-cart-total-container">
+            <div class="crt-cart-total">
+              <div class="crt-total-heading">Cart Total</div>
+              <div class="crt-total-descriptions">
+                <div class="crt-total-description">Subtotal</div>
+                <div class="crt-total-description" id="crt-subtotal">$0</div>
+              </div>
+              <hr />
+              <div class="crt-total-descriptions">
+                <div class="crt-total-description">Shipping</div>
+                <div class="crt-total-description" id="crt-shipping">Free</div>
+              </div>
+              <hr />
+              <div class="crt-total-descriptions">
+                <div class="crt-total-description">Total</div>
+                <div class="crt-total-description" id="crt-total">$0</div>
+              </div>
+              <div class="crt-total-button-container">
+                <button class="crt-coupon-button">Procees to checkout</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Footer -->
+    <footer class="crt-footer">
+      <div class="crt-footer-container">
+        <div class="crt-footer-nav">
+          <div class="crt-footer-nav-item">
+            <div class="crt-footer-nav-logo">Exclusive</div>
+            <div class="crt-footer-nav-title">Subscribe</div>
+            <div class="crt-footer-nav-text">Get 10% off your first order</div>
+            <div class="crt-footer-nav-input-container">
+              <input type="text" placeholder="Enter your email" />
+              <button>
+                <img src="./images/cart-page/footer-button.png" alt="" />
+              </button>
+            </div>
+          </div>
+          <div class="crt-footer-nav-item">
+            <div class="crt-footer-nav-title">Support</div>
+            <div class="crt-footer-nav-text">
+              111 Bijoy sarani, Dhaka, <br />
+              DH 1515, Bangladesh.
+            </div>
+            <div class="crt-footer-nav-text">exclusive@gmail.com</div>
+            <div class="crt-footer-nav-text">+88015-88888-9999</div>
+          </div>
+
+          <div class="crt-footer-nav-item">
+            <div class="crt-footer-nav-title">Account</div>
+            <div class="crt-footer-nav-text">My Account</div>
+            <div class="crt-footer-nav-text">Login / Register</div>
+            <div class="crt-footer-nav-text">Wishlist</div>
+            <div class="crt-footer-nav-text">Shop</div>
+          </div>
+          <div class="crt-footer-nav-item">
+            <div class="crt-footer-nav-title">Quick Link</div>
+            <div class="crt-footer-nav-text">Privacy Policy</div>
+            <div class="crt-footer-nav-text">Terms Of Use</div>
+            <div class="crt-footer-nav-text">FAQ</div>
+            <div class="crt-footer-nav-text">Contact</div>
+          </div>
+          <div class="crt-footer-nav-item">
+            <div class="crt-footer-nav-title">Download App</div>
+            <div class="crt-footer-nav-text" style="font-size: 12px">
+              Save $3 with App New User Only
+            </div>
+            <div class="crt-footer-nav-app-container">
+              <div class="crt-footer-nav-qr">
+                <img src="./images/cart-page/Qr Code.png" alt="" />
+              </div>
+              <div class="crt-footer-nav-apps">
+                <div class="crt-footer-nav-app">
+                  <img src="./images/cart-page/GooglePlay.png" alt="" />
+                </div>
+                <div class="crt-footer-nav-app">
+                  <img src="./images/cart-page/AppStore.png" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="crt-footer-icon-container">
+              <a href="https://www.facebook.com/" target="_blank">
+                <img
+                  src="./images/cart-page/Icon-Facebook.png"
+                  alt=""
+                />
+              </a>
+              <a href="https://www.twitter.com/" target="_blank">
+                <img
+                  src="./images/cart-page/Icon-Twitter.png"
+                  alt=""
+                />
+              </a>
+              <a href="https://www.instagram.com/" target="_blank">
+                <img
+                  src="./images/cart-page/icon-instagram.png"
+                  alt=""
+                />
+              </a>
+              <a href="https://www.linkedin.com/" target="_blank">
+                <img
+                  src="./images/cart-page/Icon-Linkedin.png"
+                  alt=""
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <hr style="border: 1px solid rgba(255, 255, 255, 0.1)" />
+        <div class="crt-footer-copyright">
+          &copy; Copyright Archie's Academy 2024. All right reserved
+        </div>
+      </div>
+    </footer>
+    <!-- HASIM - CARTPAGE END -->
   </body>
+  <script src="cart.js"></script>
 </html>

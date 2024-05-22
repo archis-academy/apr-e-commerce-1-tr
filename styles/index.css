@@ -185,6 +185,10 @@
   box-shadow: 2px 2px 8px black, -2px -2px 8px black;
 }
 
+.tpdr-icon.added-wish-list{
+  box-shadow: 2px 2px 8px black, -2px -2px 8px black;
+}
+
 .tpdr-addCart {
   background-color: black;
   color: white;
