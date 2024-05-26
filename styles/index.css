@@ -82,7 +82,6 @@ p {
 }
 .header-top-menu {
   width: 78px;
-  height: 24px;
   gap: 5px;
   opacity: 0px;
 }
@@ -92,11 +91,13 @@ p {
   align-items: center;
   gap: 148px;
   width: 1170px;
-  height: 38px;
   top: 88px;
   gap: 148px;
   opacity: 0px;
   margin-left: 135px;
+}
+.title{
+  margin: 0;
 }
 .header_container {
   display: flex;
@@ -129,7 +130,6 @@ p {
   cursor: pointer;
   margin-bottom: 0;
   width: 367px;
-  height: 24px;
   gap: 48px;
   opacity: 0px;
   width: auto;
@@ -247,7 +247,7 @@ p {
   cursor: pointer;
 }
 .header-list-container ul li {
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   width: 217px;
 }
 .header-list-container {
@@ -258,10 +258,7 @@ p {
 .line-left {
   width: 0.5px;
   height: 425px;
-  top: 142px;
   left: 368px;
-  gap: 0px;
-  opacity: 0.3px;
   border: 0.5px solid rgba(0, 0, 0, 1);
 }
 .slide {
@@ -308,51 +305,6 @@ p {
 
 .carousel-indicators span.active {
   background-color: orangered;
-}
-
-/* Animatoin Start */
-.header-tree,
-.header-down,
-.header-list-container,
-.header-item-container,
-.header-list-item {
-  animation: slide-in 0.3s alternate;
-}
-
-.menu,
-.menu_icons,
-.menu_icons_container,
-.searchIcon,
-.busketIcon {
-  animation: slide-in 0.4s cubic-bezier;
-}
-/* Animation End */
-@media only screen and (max-width: 768px) {
-  .header-tree {
-    padding: 0 10px;
-  }
-  
-  .header-down {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .header-list-container {
-    display: block;
-    margin-top: 20px;
-  }
-
-  .header-item-container {
-    margin-right: 20px; /* Listenin sağ tarafından biraz boşluk bırakmak için */
-  }
-
-}
-
-@media screen and (max-width: 755px) {
-  .line-left {
-    display: none;
-  }
 }
 
 /* Yigit Header End */
