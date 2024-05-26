@@ -4,75 +4,197 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exclusive E-Commerce</title>
-    <!-- Inter Font -->
+    <link rel="stylesheet" href="styles/shared.css">
+    <link rel="stylesheet" href="styles/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     />
-    <!-- Poppins Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- CSS Imports -->
-    <link rel="stylesheet" href="styles/shared.css" />
-    <link rel="stylesheet" href="styles/index.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
   <body>
-    <!-- HASIM / TODAY'S PRODUCT SECTION START classnames = "tdpr" -->
-    <section class="tdpr">
-      <div class="tpdr-container">
-        <div class="tdpr-topic">
-          <span class="topic-rectangle"></span>
-          <span class="topicText">Today's</span>
+    <!-- Yigit Header Start -->
+    <nav class="header-tree">
+      <div class="top-header">
+        <div class="top-summer">
+          <p class="top-text">
+            Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
+          </p>
         </div>
-        <div class="tdpr-heading">
-          <div class="tdpr-heading-texts">
-            <span class="tdpr-heading-text">Flash Sales</span>
-            <div class="tdpr-heading-count">
-              <div class="count-times">
-                <span class="tdpr-time-name">Days</span>
-                <span class="tdpr-time-count" id="tdpr-day"></span>
+        <div class="top-shop">
+          <a href="#" class="top-Shop"> ShopNow </a>
+        </div>
+        <select class="header-language">
+          <option>English</option>
+          <option>Turkhis</option>
+        </select>
+      </div>
+      <nav class="header-down">
+        <div class="header_container">
+          <h2 class="title">Exclusive</h2>
+          <ul class="menu">
+            <a href="index.html"> <li>Home</li> </a>
+            <li>Contact</li>
+            <li>About</li>
+            <li>Sign Up</li>
+          </ul>
+        </div>
+        <div class="menu_icons_container">
+          <ul class="menu_icons">
+            <div class="search_container">
+              <li class="searchIcon" id="search-form">
+                <input
+                  type="text"
+                  class="search_input"
+                  placeholder="What are you looking for?"
+                />
+                <img src="images/search-icon.svg" />
+              </li>
+              <div class="search_results"></div>
+              <div class="wishlist-link">
+                <a href="" id="wishlist-link">
+                  <li>
+                    <img src="images/wishlist-icon.svg" />
+                  </li>
+                </a>
               </div>
-              <span class="colon">:</span>
-              <div class="count-times">
-                <span class="tdpr-time-name">Hours</span>
-                <span class="tdpr-time-count" id="tdpr-hour"></span>
-              </div>
-              <span class="colon">:</span>
-              <div class="count-times">
-                <span class="tdpr-time-name">Minutes</span>
-                <span class="tdpr-time-count" id="tdpr-minute"></span>
-              </div>
-              <span class="colon">:</span>
-              <div class="count-times">
-                <span class="tdpr-time-name">Seconds</span>
-                <span class="tdpr-time-count" id="tdpr-second"></span>
+              <div class="cart-link">
+                <a href="" id="cart-link">
+                  <li class="busketIcon">
+                    <img src="images/cart-icon.svg" />
+                  </li>
+                </a>
               </div>
             </div>
-          </div>
-          <div class="tdpr-heading-arrows">
-            <span class="tdpr-arrow" id="tdpr-arrow-left">
-              <img src="./images/todays-product/icons_arrow-left.png" alt="" />
-            </span>
-            <span class="tdpr-arrow" id="tdpr-arrow-right">
-              <img src="./images/todays-product/icons_arrow-right.png" alt="" />
-            </span>
-          </div>
+          </ul>
         </div>
-        <div class="tdpr-cards">
-          <div class="tdpr-cards-container"></div>
+      </nav>
+      
+      <div class="header">
+        <div class="line-bottom"></div>
+      </div>
+      <div class="header-list-container">
+        <div class="header-item-container">
+          <ul class="header-list-item">
+            <li>Woman’s Fashion</li>
+            <li>Men’s Fashion</li>
+            <li>Electronics</li>
+            <li>Home & Lifestyle</li>
+            <li>Medicine</li>
+            <li>Sports & Outdoor</li>
+            <li>Baby’s & Toys</li>
+            <li>Groceries & Pets</li>
+            <li>Health & Beauty</li>
+          </ul>
+        </div>
+        <div class="line-left"></div>
+        <div
+          id="carouselExampleIndicators"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-indicators">
+            <span class="active" data-index="0"></span>
+            <span data-index="1"></span>
+            <span data-index="2"></span>
+            <span data-index="3"></span>
+            <span data-index="4"></span>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="images/apple-1.png"
+                class="carosuel_images"
+                alt="Iphone"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/playstation5.png"
+                class="carosuel_images"
+                alt="playstation5"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/sam-moghadam-khamseh-L_7MQsHl_aU-unsplash 1.png"
+                class="carosuel_images"
+                alt="Gucci_Perfume  "
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/547953_9C2ST_8746_001_082_0000_Light-Gucci-Savoy-medium-duffle-bag 1.png"
+                class="carosuel_images"
+                alt="Gucci_Perfume  "
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/gucci-perfume.png"
+                class="carosuel_images"
+                alt="Gucci_Perfume  "
+              />
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-    <script src="todaysPRoduct.js"></script>
-    <!-- HASIM / TODAY'S PRODUCT SECTION END -->
-
+    </nav>
+    <script src="index.js"></script>
+    <!-- Yigit Header End -->
+        <!-- HASIM / TODAY'S PRODUCT SECTION START classnames = "tdpr" -->
+        <section class="tdpr">
+          <div class="tpdr-container">
+            <div class="tdpr-topic">
+              <span class="topic-rectangle"></span>
+              <span class="topicText">Today's</span>
+            </div>
+            <div class="tdpr-heading">
+              <div class="tdpr-heading-texts">
+                <span class="tdpr-heading-text">Flash Sales</span>
+                <div class="tdpr-heading-count">
+                  <div class="count-times">
+                    <span class="tdpr-time-name">Days</span>
+                    <span class="tdpr-time-count" id="tdpr-day"></span>
+                  </div>
+                  <span class="colon">:</span>
+                  <div class="count-times">
+                    <span class="tdpr-time-name">Hours</span>
+                    <span class="tdpr-time-count" id="tdpr-hour"></span>
+                  </div>
+                  <span class="colon">:</span>
+                  <div class="count-times">
+                    <span class="tdpr-time-name">Minutes</span>
+                    <span class="tdpr-time-count" id="tdpr-minute"></span>
+                  </div>
+                  <span class="colon">:</span>
+                  <div class="count-times">
+                    <span class="tdpr-time-name">Seconds</span>
+                    <span class="tdpr-time-count" id="tdpr-second"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="tdpr-heading-arrows">
+                <span class="tdpr-arrow" id="tdpr-arrow-left">
+                  <img src="./images/todays-product/icons_arrow-left.png" alt="" />
+                </span>
+                <span class="tdpr-arrow" id="tdpr-arrow-right">
+                  <img src="./images/todays-product/icons_arrow-right.png" alt="" />
+                </span>
+              </div>
+            </div>
+            <div class="tdpr-cards">
+              <div class="tdpr-cards-container"></div>
+            </div>
+          </div>
+        </section>
+        <script src="todaysPRoduct.js"></script>
+        <!-- HASIM / TODAY'S PRODUCT SECTION END -->
     <script src="app.js"></script>
   </body>
 </html>
