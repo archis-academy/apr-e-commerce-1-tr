@@ -229,3 +229,228 @@
   text-decoration: line-through;
 }
 /*HASIM / TODAY'S PRODUCT END*/
+
+/* Explore Our Products Section Styles */
+
+.explore-our-products {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.explore-header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.explore-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.explore-title span {
+  width: 20px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: var(--primaryColor);
+}
+.explore-title p {
+  color: var(--primaryColor);
+  font-family: var(--bodyFont);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+}
+.explore-subtitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 70px;
+}
+.explore-subtitle-desc {
+  color: black;
+  font-family: var(--titlesFont);
+  font-weight: 600;
+  font-size: 36px;
+}
+.explore-arrow {
+  font-size: 30px;
+  gap: 20px;
+  display: flex;
+}
+.explore-arrow i {
+  background-color: rgb(242, 242, 242);
+  border-radius: 50%;
+  padding: 5px;
+}
+.explore-arrow i:hover {
+  background-color: #db4444;
+  color: white;
+}
+.explore-main-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+}
+.explore-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+.explore-wrapper .explore-product-box {
+  flex: 1 1 15rem;
+  justify-content: center;
+}
+.explore-product-box {
+  display: flex;
+  justify-content: center;
+  height: 322px;
+  width: 270px;
+  position: relative;
+}
+.explore-item {
+  width: 100%;
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.explore-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+}
+.explore-product-box .explore-icon-product {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.explore-product-box .explore-icon-product i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0.25em;
+  margin: 0.25em;
+  border-radius: 50%;
+  line-height: 1;
+  background-color: white;
+  opacity: 0.5;
+  transition: var(--trans-background-color), opacity 0.3s;
+  cursor: pointer;
+}
+.explore-image {
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+.explore-product-box :where(.explore-image) img {
+  transition: transform 0.3s;
+}
+.explore-product-box :where(.explore-image):hover img {
+  transform: scale(1.1);
+}
+.explore-product-box .explore-item:hover .explore-icon-product i {
+  opacity: 1;
+}
+.explore-product-box .explore-icon-product i:hover {
+  color: white;
+  background-color: var(--primaryColor);
+}
+.explore-product-box .explore-icon-product i {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.2s;
+}
+.explore-product-box .explore-item:hover .explore-icon-product i {
+  transform: translateX(0);
+  opacity: 1;
+}
+.explore-product-box .explore-icon-product i:last-child {
+  transition-delay: 0.1s;
+}
+.explore-item .explore-media {
+  position: relative;
+  width: 100%;
+  border-radius: 7px;
+}
+.explore-media .explore-text {
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: var(--bodyFont);
+  padding: 5px;
+  position: absolute;
+  bottom: 0;
+  display: none;
+  width: 250px;
+}
+.explore-media:hover .explore-text {
+  display: flex;
+  cursor: pointer;
+}
+.explore-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.explore-title-product {
+  font-family: var(--bodyFont);
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+}
+.explore-desc-product {
+  display: flex;
+  gap: 10px;
+}
+.explore-rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.checked {
+  color: rgb(255, 149, 0);
+}
+.unchecked {
+  color: #aaa8a8;
+}
+.explore-price {
+  font-family: var(--bodyFont);
+  color: var(--primaryColor);
+  font-size: 16px;
+  font-weight: 500;
+}
+.mini-text {
+  font-family: var(--bodyFont);
+  color: #aaa8a8;
+  font-size: 14px;
+  font-weight: 600;
+}
+button {
+  background-color: var(--primaryColor);
+  padding: 16px 48px;
+  border-radius: 5px;
+  font-size: var(--bodyFont);
+  font-size: 16px;
+  font-weight: 500;
+  color: #fafafa;
+  border-color: var(--primaryColor);
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
+  max-width: 250px;
+  margin: 0 auto;
+}
+button:hover {
+  background-color: #fafafa;
+  color: var(--primaryColor);
+  cursor: pointer;
+}
+
+/* End Explore Our Products Section Styles */

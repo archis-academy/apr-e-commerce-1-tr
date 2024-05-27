@@ -1,4 +1,3 @@
-
 //HASIM - FLASHSALES SECTION START
 // Count Down Codes
 const day = document.getElementById("tdpr-day");
@@ -27,14 +26,13 @@ const countDownInterval = setInterval(() => {
   countDown(new Date("2024-05-12 00:00:00").getTime());
 }, 1000);
 
-
 //Fetch API codes
 const endpoint = "https://fakestoreapi.com/products";
 async function getProducts() {
   const response = await fetch(endpoint);
   const products = await response.json();
-  flashSalesdata = products.slice(0,8);
-  flashSalesArrow(flashSalesdata)
+  flashSalesdata = products.slice(0, 8);
+  flashSalesArrow(flashSalesdata);
   renderFlashSalesProduct(flashSalesdata);
 }
 
@@ -64,9 +62,10 @@ function renderFlashSalesProduct(data) {
   </div>
   <div class="tpdr-card-name">${item.title}</div>
   <div class="tpdr-card-amount">
-    <span class="tdpr-amount-discounted">$${
-      (item.price - (item.price / 2)).toFixed()
-    }</span>
+    <span class="tdpr-amount-discounted">$${(
+      item.price -
+      item.price / 2
+    ).toFixed()}</span>
     <span class="tdpr-amount-real">$${item.price}</span>
   </div>
   <div class="stars"></div>
@@ -78,29 +77,29 @@ function renderFlashSalesProduct(data) {
 }
 
 //Cards Left-Right Codes
-function flashSalesArrow(data){
+function flashSalesArrow(data) {
   const cardContainer = document.querySelector(".tdpr-cards-container");
-const cardWrappper = document.querySelector(".tdpr-cards");
-const cardItem = document.querySelectorAll(".tpdr-card-item");
-console.log();
-const arrowLeft = document.querySelector("#tdpr-arrow-left");
-const arrowRight = document.querySelector("#tdpr-arrow-right");
-let deger = 0;
+  const cardWrappper = document.querySelector(".tdpr-cards");
+  const cardItem = document.querySelectorAll(".tpdr-card-item");
+  console.log();
+  const arrowLeft = document.querySelector("#tdpr-arrow-left");
+  const arrowRight = document.querySelector("#tdpr-arrow-right");
+  let deger = 0;
 
-arrowRight.addEventListener("click", () => {
-  const offsetWidth = cardContainer.offsetWidth;
-  if (deger > (data.length - offsetWidth / 290) * -290) {
-    deger += -290;
-    cardContainer.style.left = `${deger}px`;
-  }
-});
+  arrowRight.addEventListener("click", () => {
+    const offsetWidth = cardContainer.offsetWidth;
+    if (deger > (data.length - offsetWidth / 290) * -290) {
+      deger += -290;
+      cardContainer.style.left = `${deger}px`;
+    }
+  });
 
-arrowLeft.addEventListener("click", () => {
-  if (deger < 0) {
-    deger += 290;
-    cardContainer.style.left = `${deger}px`;
-  }
-});
+  arrowLeft.addEventListener("click", () => {
+    if (deger < 0) {
+      deger += 290;
+      cardContainer.style.left = `${deger}px`;
+    }
+  });
 }
 
 //HASIM - FLASHSALES SECTION END
