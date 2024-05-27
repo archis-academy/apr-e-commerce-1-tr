@@ -1,3 +1,29 @@
+//Coupon Fake Data And Codes
+const couponData = [
+  { couponCode: "HASIM20", discount: 20 },
+  { couponCode: "ALPEREN25", discount: 25 },
+  { couponCode: "ARCHIS30", discount: 30 },
+];
+
+let isDiscounted = false;
+document.querySelector(".crt-coupon-button").addEventListener("click", () => {
+  const inputValue = document.querySelector("#coupon").value.toUpperCase();
+  const notFound = document.querySelector("#crt-coupon-not-found");
+  const coupon = couponData.find((item) => item.couponCode == inputValue);
+  if (coupon != undefined) {
+    if (!isDiscounted) {
+      setTotalAmount(coupon.discount);
+      isDiscounted = true;
+    } else{
+      alert("Coupon Code Already Used")
+    }
+  } else {
+    notFound.style.display = "inline";
+  }
+  
+});
+
+// Locale Storage Codes
 let cartList = JSON.parse(localStorage.getItem("cartProducts")) || [];
 const wishList = JSON.parse(localStorage.getItem("wishlistProducts")) || [];
 let cartTotalQuantity =
@@ -26,7 +52,7 @@ const setIconsQuantity = () => {
 setIconsQuantity();
 
 //Total Amount Set Codes
-const setTotalAmount = () => {
+const setTotalAmount = (discount = 0) => {
   const cartSubTotalElement = document.getElementById("crt-subtotal");
   const cartShippingElement = document.getElementById("crt-shipping");
   const cartTotalElement = document.getElementById("crt-total");
@@ -36,13 +62,17 @@ const setTotalAmount = () => {
     cartTotalAmount =
       cartTotalAmount + element.cartCount * element.price.toFixed();
   });
+
+  const discountedAmount =
+    cartTotalAmount - ((cartTotalAmount * discount) / 100).toFixed();
+
   if (cartList.length > 0) {
-    cartSubTotalElement.textContent = `$ ${cartTotalAmount}`;
+    cartSubTotalElement.textContent = `$ ${discountedAmount}`;
     if (cartTotalAmount >= 100) {
       cartTotalElement.textContent = `$ ${cartTotalAmount}`;
       cartShippingElement.textContent = "Free";
     } else {
-      cartTotalElement.textContent = `$ ${cartTotalAmount + 50}`;
+      cartTotalElement.textContent = `$ ${discountedAmount + 50}`;
       cartShippingElement.textContent = "$50";
     }
   } else {

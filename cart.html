@@ -110,13 +110,16 @@
         </div>
         <!-- Cart Bottom -->
         <div class="crt-bottom-total">
-          <div class="crt-coupon">
-            <div class="crt-coupon-input-container">
-              <input type="text" placeholder="Coupon Code" />
+          <div class="crt-coupon-container">
+            <div class="crt-coupon">
+              <div class="crt-coupon-input-container">
+                <input type="text" placeholder="Coupon Code" id="coupon"/>
+              </div>
+              <div class="crt-coupon-button-container">
+                <button class="crt-coupon-button">Apply Coupon</button>
+              </div>              
             </div>
-            <div class="crt-coupon-button-container">
-              <button class="crt-coupon-button">Apply Coupon</button>
-            </div>
+            <span id="crt-coupon-not-found">Coupon Not Found</span>
           </div>
 
           <!-- Cart Bottom Container -->
