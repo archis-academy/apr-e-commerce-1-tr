@@ -23,7 +23,7 @@ const countDown = (bitisZamani) => {
 };
 
 const countDownInterval = setInterval(() => {
-  countDown(new Date("2024-05-20 00:00:00").getTime());
+  countDown(new Date("2024-06-20 00:00:00").getTime());
 }, 1000);
 
 //Fetch API codes
