@@ -64,12 +64,12 @@ const setTotalAmount = (discount = 0) => {
   });
 
   const discountedAmount =
-    cartTotalAmount - ((cartTotalAmount * discount) / 100).toFixed();
+    cartTotalAmount - ((cartTotalAmount * discount) / 100).toFixed(2);
 
   if (cartList.length > 0) {
     cartSubTotalElement.textContent = `$ ${discountedAmount}`;
     if (cartTotalAmount >= 100) {
-      cartTotalElement.textContent = `$ ${cartTotalAmount}`;
+      cartTotalElement.textContent = `$ ${discountedAmount}`;
       cartShippingElement.textContent = "Free";
     } else {
       cartTotalElement.textContent = `$ ${discountedAmount + 50}`;
