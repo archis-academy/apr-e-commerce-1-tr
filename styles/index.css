@@ -185,7 +185,7 @@
   box-shadow: 2px 2px 8px black, -2px -2px 8px black;
 }
 
-.tpdr-icon.added-wish-list{
+.tpdr-icon.added-wish-list {
   box-shadow: 2px 2px 8px black, -2px -2px 8px black;
 }
 
@@ -331,7 +331,7 @@ p {
   opacity: 0px;
   margin-left: 135px;
 }
-.title{
+.title {
   margin: 0;
 }
 .header_container {
@@ -543,3 +543,81 @@ p {
 }
 
 /* Yigit Header End */
+.best-selling-products {
+  padding: 20px;
+  text-align: center;
+}
+
+.header-selling {
+  display: flex;
+  margin-bottom: 20px;
+  gap: 611px;
+  opacity: 0px;
+}
+
+.header-selling .view-all-btn {
+  width: 159px;
+  height: 56px;
+  background-color: #ff4b4b;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.header-selling span {
+  width: 20px;
+  height: 40px;
+  background: rgba(219, 68, 68, 1);
+
+}
+.category-rectangle-text {
+  width: 89px;
+  height: 20px;
+  gap: 0px;
+  opacity: 0px;
+  
+}
+.products-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.product {
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  position: relative;
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+}
+
+.product .original-price {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.product .discount-price {
+  color: #ff4b4b;
+  font-weight: bold;
+}
+
+.product .discount-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff4b4b;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.product .ratings {
+  color: #ffc107;
+}

@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exclusive E-Commerce</title>
-    <link rel="stylesheet" href="styles/shared.css">
-    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/shared.css" />
+    <link rel="stylesheet" href="styles/index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -74,7 +74,7 @@
           </ul>
         </div>
       </nav>
-      
+
       <div class="header">
         <div class="line-bottom"></div>
       </div>
@@ -147,54 +147,69 @@
     </nav>
     <script src="index.js"></script>
     <!-- Yigit Header End -->
-        <!-- HASIM / TODAY'S PRODUCT SECTION START classnames = "tdpr" -->
-        <section class="tdpr">
-          <div class="tpdr-container">
-            <div class="tdpr-topic">
-              <span class="topic-rectangle"></span>
-              <span class="topicText">Today's</span>
-            </div>
-            <div class="tdpr-heading">
-              <div class="tdpr-heading-texts">
-                <span class="tdpr-heading-text">Flash Sales</span>
-                <div class="tdpr-heading-count">
-                  <div class="count-times">
-                    <span class="tdpr-time-name">Days</span>
-                    <span class="tdpr-time-count" id="tdpr-day"></span>
-                  </div>
-                  <span class="colon">:</span>
-                  <div class="count-times">
-                    <span class="tdpr-time-name">Hours</span>
-                    <span class="tdpr-time-count" id="tdpr-hour"></span>
-                  </div>
-                  <span class="colon">:</span>
-                  <div class="count-times">
-                    <span class="tdpr-time-name">Minutes</span>
-                    <span class="tdpr-time-count" id="tdpr-minute"></span>
-                  </div>
-                  <span class="colon">:</span>
-                  <div class="count-times">
-                    <span class="tdpr-time-name">Seconds</span>
-                    <span class="tdpr-time-count" id="tdpr-second"></span>
-                  </div>
-                </div>
+    <!-- HASIM / TODAY'S PRODUCT SECTION START classnames = "tdpr" -->
+    <section class="tdpr">
+      <div class="tpdr-container">
+        <div class="tdpr-topic">
+          <span class="topic-rectangle"></span>
+          <span class="topicText">Today's</span>
+        </div>
+        <div class="tdpr-heading">
+          <div class="tdpr-heading-texts">
+            <span class="tdpr-heading-text">Flash Sales</span>
+            <div class="tdpr-heading-count">
+              <div class="count-times">
+                <span class="tdpr-time-name">Days</span>
+                <span class="tdpr-time-count" id="tdpr-day"></span>
               </div>
-              <div class="tdpr-heading-arrows">
-                <span class="tdpr-arrow" id="tdpr-arrow-left">
-                  <img src="./images/todays-product/icons_arrow-left.png" alt="" />
-                </span>
-                <span class="tdpr-arrow" id="tdpr-arrow-right">
-                  <img src="./images/todays-product/icons_arrow-right.png" alt="" />
-                </span>
+              <span class="colon">:</span>
+              <div class="count-times">
+                <span class="tdpr-time-name">Hours</span>
+                <span class="tdpr-time-count" id="tdpr-hour"></span>
               </div>
-            </div>
-            <div class="tdpr-cards">
-              <div class="tdpr-cards-container"></div>
+              <span class="colon">:</span>
+              <div class="count-times">
+                <span class="tdpr-time-name">Minutes</span>
+                <span class="tdpr-time-count" id="tdpr-minute"></span>
+              </div>
+              <span class="colon">:</span>
+              <div class="count-times">
+                <span class="tdpr-time-name">Seconds</span>
+                <span class="tdpr-time-count" id="tdpr-second"></span>
+              </div>
             </div>
           </div>
-        </section>
-        <script src="todaysPRoduct.js"></script>
-        <!-- HASIM / TODAY'S PRODUCT SECTION END -->
+          <div class="tdpr-heading-arrows">
+            <span class="tdpr-arrow" id="tdpr-arrow-left">
+              <img src="./images/todays-product/icons_arrow-left.png" alt="" />
+            </span>
+            <span class="tdpr-arrow" id="tdpr-arrow-right">
+              <img src="./images/todays-product/icons_arrow-right.png" alt="" />
+            </span>
+          </div>
+        </div>
+        <div class="tdpr-cards">
+          <div class="tdpr-cards-container"></div>
+        </div>
+      </div>
+    </section>
+    <script src="todaysPRoduct.js"></script>
+    <!-- HASIM / TODAY'S PRODUCT SECTION END -->
+<!-- YIGIT/Homepage Best Selling Products START -->
+    <section class="best-selling-products">
+      <div class="header-selling">
+        <div class="this-mounth-text">
+          <span class="category_rectangle"></span>
+          <span class="category-rectangle-text">This Month</span>
+          <h3>Best Selling Products</h3>
+        </div>
+
+        <button class="view-all-btn">View All</button>
+      </div>
+      <div class="products-container" id="products-container">
+      </div>
+    </section>
+    <!-- YIGIT/Homepage Best Selling Products END -->
     <script src="app.js"></script>
   </body>
 </html>
