@@ -63,17 +63,17 @@ function renderFlashSalesProduct(data) {
   }');"> <div class="tpdr-card-icons-container">
       <span class="tpdr-card-discount">-50%</span>
       <div class="tpdr-card-icons">
-        <a href="#" class="tpdr-icon" id="fav-icon-${
+        <a href="" class="tpdr-icon" id="fav-icon-${
           item.id
         }" onclick="addToWishlist(${item.id})">
           <img src="./images/todays-product/heartsmall.png" alt="Heart">
         </a>
-        <a href="#" class="tpdr-icon">
+        <a href="" class="tpdr-icon">
           <img src="./images/todays-product/quickview.png" alt="Quickview">
         </a>
       </div>
     </div>
-    <a href="#" class="tpdr-addCart" onclick="addToCart(${
+    <a href="" class="tpdr-addCart" onclick="addToCart(${
       item.id
     })" >Add To Cart</a>
   </div>
