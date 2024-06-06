@@ -19,6 +19,7 @@
 
 .tpdr-container {
   width: 75%;
+  max-width: 1170px;
   display: flex;
   flex-direction: column;
 }
@@ -185,7 +186,7 @@
   box-shadow: 2px 2px 8px black, -2px -2px 8px black;
 }
 
-.tpdr-icon.added-wish-list{
+.tpdr-icon.added-wish-list {
   box-shadow: 2px 2px 8px black, -2px -2px 8px black;
 }
 
@@ -207,6 +208,7 @@
 
 .tpdr-card-image-container:hover .tpdr-addCart {
   height: 40px;
+  text-decoration: none;
 }
 
 .tpdr-card-name {
@@ -233,6 +235,7 @@
   text-decoration: line-through;
 }
 /*HASIM / TODAY'S PRODUCT END*/
+
 /* Yigit Header Start */
 p {
   display: block;
@@ -331,7 +334,7 @@ p {
   opacity: 0px;
   margin-left: 135px;
 }
-.title{
+.title {
   margin: 0;
 }
 .header_container {
@@ -543,3 +546,201 @@ p {
 }
 
 /* Yigit Header End */
+/*HASIM / FEATURED PRODUCT START*/
+.ftr {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.ftr-container {
+  width: 75%;
+  max-width: 1170px;
+  background-color: #000;
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.ftr-image-container {
+  flex: 1;
+  text-align: end;
+}
+
+.ftr-image-container img {
+  object-fit: contain;
+  height: 250px;
+  opacity: 0;
+  transition: all 1500ms;
+}
+
+.ftr-content-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 40px;
+}
+
+.ftr-title {
+  font-family: var(--bodyFont);
+  color: #00ff66;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.ftr-description {
+  font-family: var(--titlesFont);
+  color: #fafafa;
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.ftr-count-container {
+  display: flex;
+  gap: 20px;
+}
+
+.ftr-times {
+  display: flex;
+  background-color: #fafafa;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+}
+
+.ftr-times span {
+  font-family: var(--bodyFont);
+}
+
+.ftr-time {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.ftr-time-name {
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.ftr-button {
+  font-family: var(--bodyFont);
+  color: white;
+  background-color: #00ff66;
+  padding: 16px 48px;
+  font-weight: 500;
+  border: 1px solid transparent;
+  transition: all 0.5s;
+  border-radius: 4px;
+}
+
+.ftr-button:hover {
+  background-color: transparent;
+  border: 1px solid white;
+}
+
+/*HASIM / FEATURED PRODUCT END*/
+
+/* HASIM / FOOTER START*/
+.home-footer {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.home-footer-container {
+  max-width: 1170px;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.home-footer-nav {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 80px 0;
+}
+
+.home-footer-nav-item {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.home-footer-nav-logo {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: var(--titlesFont);
+}
+
+.home-footer-nav-title {
+  font-family: var(--bodyFont);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.home-footer-nav-text {
+  font-family: var(--bodyFont);
+  font-size: 16px;
+  font-weight: 400;
+  text-underline-offset: 5px;
+}
+
+.home-footer-nav-text:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.home-footer-nav-input-container {
+  display: flex;
+  border: 1px solid #fafafa;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+.home-footer-nav-input-container button,
+input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-family: var(--bodyFont);
+}
+
+.home-footer-nav-input-container input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.home-footer-nav-app-container {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.home-footer-nav-apps {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-footer-icon-container {
+  display: flex;
+  gap: 24px;
+}
+
+.home-footer-copyright {
+  font-family: var(--bodyFont);
+  margin-bottom: 20px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* HASIM / FOOTER END*/
+

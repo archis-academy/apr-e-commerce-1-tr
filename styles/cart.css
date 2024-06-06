@@ -17,7 +17,8 @@ body {
 .cartpage-container {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 75%;
+  max-width: 1170px;
 }
 
 .crtt-header {
@@ -34,7 +35,8 @@ body {
 }
 
 .crt-header-top-wrapper {
-  width: 80%;
+  width: 75%;
+  max-width: 1170px;
   display: flex;
 }
 
@@ -298,7 +300,7 @@ body {
   align-items: start;
 }
 
-.crt-coupon-container{
+.crt-coupon-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -355,7 +357,7 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
-.crt-coupon-container span{
+.crt-coupon-container span {
   font-family: var(--bodyFont);
   font-size: 14px;
   color: red;
@@ -408,7 +410,8 @@ footer {
 }
 
 .crt-footer-container {
-  width: 80%;
+  max-width: 1170px;
+  width: 75%;
   display: flex;
   flex-direction: column;
   gap: 20px;

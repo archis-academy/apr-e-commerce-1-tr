@@ -4,6 +4,12 @@ const day = document.getElementById("tdpr-day");
 const hour = document.getElementById("tdpr-hour");
 const minute = document.getElementById("tdpr-minute");
 const second = document.getElementById("tdpr-second");
+
+const ftrDay = document.getElementById("ftr-day");
+const ftrHour = document.getElementById("ftr-hour");
+const ftrMinute = document.getElementById("ftr-minute");
+const ftrSecond = document.getElementById("ftr-second");
+
 const countDown = (bitisZamani) => {
   const simdikiZaman = new Date().getTime();
   const kalanZaman = bitisZamani - simdikiZaman;
@@ -17,6 +23,10 @@ const countDown = (bitisZamani) => {
   hour.textContent = saatler < 10 ? `0${saatler}` : saatler;
   minute.textContent = dakikalar < 10 ? `0${dakikalar}` : dakikalar;
   second.textContent = saniyeler < 10 ? `0${saniyeler}` : saniyeler;
+  ftrDay.textContent = gunler < 10 ? `0${gunler}` : gunler;
+  ftrHour.textContent = saatler < 10 ? `0${saatler}` : saatler;
+  ftrMinute.textContent = dakikalar < 10 ? `0${dakikalar}` : dakikalar;
+  ftrSecond.textContent = saniyeler < 10 ? `0${saniyeler}` : saniyeler;
   if (kalanZaman <= 0) {
     clearInterval(countDownInterval);
   }
@@ -36,6 +46,7 @@ async function getProducts() {
   flashSalesdata = products.slice(0, 8);
   flashSalesArrow(flashSalesdata);
   renderFlashSalesProduct(flashSalesdata);
+  changeImage(flashSalesdata);
 }
 
 getProducts();
@@ -52,17 +63,17 @@ function renderFlashSalesProduct(data) {
   }');"> <div class="tpdr-card-icons-container">
       <span class="tpdr-card-discount">-50%</span>
       <div class="tpdr-card-icons">
-        <a href="#" class="tpdr-icon" id="fav-icon-${
+        <a href="" class="tpdr-icon" id="fav-icon-${
           item.id
         }" onclick="addToWishlist(${item.id})">
           <img src="./images/todays-product/heartsmall.png" alt="Heart">
         </a>
-        <a href="#" class="tpdr-icon">
+        <a href="" class="tpdr-icon">
           <img src="./images/todays-product/quickview.png" alt="Quickview">
         </a>
       </div>
     </div>
-    <a href="#" class="tpdr-addCart" onclick="addToCart(${
+    <a href="" class="tpdr-addCart" onclick="addToCart(${
       item.id
     })" >Add To Cart</a>
   </div>
@@ -110,12 +121,10 @@ function addToWishlist(productId) {
 //Add to Cart Codes
 function addToCart(productId) {
   const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
-  let cartTotalQuantity = JSON.parse(localStorage.getItem("cartTotalQuantity")) || 0;
-  cartTotalQuantity ++;
-  localStorage.setItem(
-    "cartTotalQuantity",
-    cartTotalQuantity
-  );
+  let cartTotalQuantity =
+    JSON.parse(localStorage.getItem("cartTotalQuantity")) || 0;
+  cartTotalQuantity++;
+  localStorage.setItem("cartTotalQuantity", cartTotalQuantity);
   const isProductExist = cartProducts.some(
     (element) => element.id === productId
   );
@@ -123,7 +132,7 @@ function addToCart(productId) {
     const productToAdd = allProducts.find(
       (product) => product.id === productId
     );
-    productToAdd.cartCount =1;
+    productToAdd.cartCount = 1;
     localStorage.setItem(
       "cartProducts",
       JSON.stringify([...cartProducts, productToAdd])
@@ -170,3 +179,23 @@ function flashSalesArrow(data) {
 }
 
 //HASIM - FLASHSALES SECTION END
+
+//HASIM FEATURED PRODUCTS SECTION START
+
+//Change Image Codes
+let currentIndex = 0;
+function changeImage(data) {
+  const ftrImage = document.querySelector("#ftr-image");
+  setInterval(() => {
+    ftrImage.style.opacity = 1;
+
+    setTimeout(() => {
+      ftrImage.style.opacity = 0;
+    }, 1500);
+
+    currentIndex = (currentIndex + 1) % data.length;
+    ftrImage.src = data[currentIndex].image;
+  }, 3000);
+}
+
+//HASIM FEATURED PRODUCTS SECTION END
