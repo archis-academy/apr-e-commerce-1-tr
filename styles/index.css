@@ -544,80 +544,91 @@ p {
 
 /* Yigit Header End */
 .best-selling-products {
-  padding: 20px;
-  text-align: center;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding-left: 135px;
 }
-
-.header-selling {
+.explane-best {
+  width: 400px;
+  height: 108px;
+  opacity: 0px;
   display: flex;
-  margin-bottom: 20px;
+  align-items: center;
+}
+.best-category {
+  width: 1170px;
+  height: 108px;
   gap: 611px;
   opacity: 0px;
-}
-
-.header-selling .view-all-btn {
-  width: 159px;
-  height: 56px;
-  background-color: #ff4b4b;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-}
-.header-selling span {
-  width: 20px;
-  height: 40px;
-  background: rgba(219, 68, 68, 1);
-
-}
-.category-rectangle-text {
-  width: 89px;
-  height: 20px;
-  gap: 0px;
-  opacity: 0px;
-  
-}
-.products-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.product {
-  width: 200px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px;
-  text-align: center;
   position: relative;
 }
-
-.product img {
-  width: 100%;
-  height: auto;
+.best-selling-rectangle {
+  width: 20px;
+  height: 40px;
+  background-color: rgba(219, 68, 68, 1);
+  border-radius: 4px;
+}
+.best-selling-rectangle-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: left;
+  color: rgba(219, 68, 68, 1);
 }
 
-.product .original-price {
-  text-decoration: line-through;
-  color: #888;
+.best-selling-products-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
-.product .discount-price {
-  color: #ff4b4b;
+.best-selling-products-btn button {
+  width: 159px;
+  height: 56px;
+  padding: 16px 48px 16px 48px;
+  gap: 10px;
+  border-radius: 4px 0px 0px 0px;
+  opacity: 0px;
+  background: rgba(219, 68, 68, 1);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.best-selling-items-container {
+  width: 1170px;
+  height: 350px;
+  opacity: 0px;
+  justify-content: space-between;
+  display: flex;
+  margin-top: 60px;
+  gap: 30px ;
+}
+
+.best-selling-item img {
+  width: 140px;
+  height: 146px;
+  position: relative;
+  opacity: 1;
+  justify-content: space-around;
+}
+.best-selling-item p.price {
+  color: red;
   font-weight: bold;
 }
 
-.product .discount-badge {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: #ff4b4b;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 5px;
+.best-selling-item p.original-price {
+  text-decoration: line-through;
+  color: gray;
 }
 
-.product .ratings {
-  color: #ffc107;
+.best-selling-item .ratings {
+  display: flex;
+  align-items: center;
+}
+
+.best-selling-item .ratings img {
+  width: 15px;
+  margin-right: 5px;
 }

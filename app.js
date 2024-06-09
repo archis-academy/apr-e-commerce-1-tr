@@ -170,3 +170,54 @@ function flashSalesArrow(data) {
 }
 
 //HASIM - FLASHSALES SECTION END
+
+document.addEventListener("DOMContentLoaded", function () {
+  fetch("https://fakestoreapi.com/products")
+    .then((response) => response.json())
+    .then((data) => {
+      const itemsContainer = document.querySelector(
+        ".best-selling-items-container"
+      );
+
+      data.slice(0, 4).forEach((item) => {
+        const itemDiv = document.createElement("div");
+        itemDiv.classList.add("best-selling-item");
+
+        const itemImage = document.createElement("img");
+        itemImage.src = item.image;
+        itemImage.alt = item.title;
+
+        const itemTitle = document.createElement("h3");
+        itemTitle.textContent = item.title;
+
+        const itemPrice = document.createElement("p");
+        itemPrice.classList.add("price");
+        itemPrice.textContent = `$${item.price}`;
+
+        const itemOriginalPrice = document.createElement("p");
+        itemOriginalPrice.classList.add("original-price");
+        itemOriginalPrice.textContent = `$${(item.price * 1.2).toFixed(2)}`; // Just an example
+
+        const itemDescription = document.createElement("p");
+        itemDescription.textContent =
+          item.description.length > 100
+            ? item.description.substring(0, 100) + "..."
+            : item.description;
+
+        const itemRatings = document.createElement("div");
+        itemRatings.innerHTML = '<i class="bi bi-star-fill"></i> (65)';
+
+        itemDiv.appendChild(itemImage);
+        itemDiv.appendChild(itemTitle);
+        itemDiv.appendChild(itemPrice);
+        itemDiv.appendChild(itemOriginalPrice);
+        itemDiv.appendChild(itemDescription);
+        itemDiv.appendChild(itemRatings);
+
+        itemsContainer.appendChild(itemDiv);
+      });
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+});

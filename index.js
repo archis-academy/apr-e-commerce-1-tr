@@ -68,35 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //* Searchbar End//
-document.addEventListener('DOMContentLoaded', function() {
-  const productsContainer = document.getElementById('products-container');
-
-  fetch('https://fakestoreapi.com/products')
-    .then(response => response.json())
-    .then(products => {
-      // Sadece ilk 4 ürünü seçin
-      const limitedProducts = products.slice(0, 4);
-      limitedProducts.forEach(product => {
-        const discountPrice = calculateDiscountPrice(product.price, 30);
-        const productHTML = `
-          <div class="product">
-            <div class="discount-badge">30% OFF</div>
-            <img src="${product.image}" alt="${product.title}">
-            <h4>${product.title}</h4>
-            <p class="original-price">$${product.price.toFixed(2)}</p>
-            <p class="discount-price">$${discountPrice.toFixed(2)}</p>
-            <div class="ratings">★★★★★ (${product.rating.count})</div>
-          </div>
-        `;
-        productsContainer.innerHTML += productHTML;
-      });
-    })
-    .catch(error => console.error('Error fetching products:', error));
-
-  function calculateDiscountPrice(price, discountPercentage) {
-    return price - (price * discountPercentage / 100);
-  }
-});
 
 
 
