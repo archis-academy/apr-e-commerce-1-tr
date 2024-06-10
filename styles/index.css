@@ -918,4 +918,77 @@ input {
   flex-direction: column;
 }
 
+@media (max-width: 1120px) {
+  .new-arrivals-container {
+    flex-direction: column;
+    width: 100%;
+  }
+  .new-arrivals-container .image-group-right {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .arrivals-image-container-bottom {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+}
+@media (max-width: 630px) {
+  .arrivals-image-container-1,
+  .arrivals-image-playstation {
+    width: fit-content;
+    height: fit-content;
+  }
+  .arrivals-image-container-2,
+  .arrivals-image-woman-with-hat {
+    width: fit-content;
+    height: fit-content;
+  }
+  .arrivals-image-container-bottom,
+  .arrivals-image-speakers,
+  .arrivals-image-parfume {
+    width: fit-content;
+    height: fit-content;
+  }
+}
+@media (max-width: 520px) {
+  .arrivals-image-container-1,
+  .arrivals-image-playstation {
+    width: 400px;
+    height: 400px;
+  }
+  .arrivals-image-container-2,
+  .arrivals-image-woman-with-hat {
+    width: 370px;
+    height: 185px;
+  }
+  .arrivals-image-container-bottom,
+  .arrivals-image-speakers,
+  .arrivals-image-parfume {
+    width: 153px;
+    height: 182px;
+  }
+  .arrivals-image-container-bottom {
+    height: fit-content;
+  }
+}
+@media (max-width: 400px) {
+  .arrivals-image-container-1,
+  .arrivals-image-playstation {
+    width: 300px;
+    height: 300px;
+  }
+  .arrivals-image-container-2,
+  .arrivals-image-woman-with-hat {
+    width: 270px;
+  }
+
+  .arrivals-image-container-bottom {
+    flex-direction: column;
+  }
+}
+
 /* End of Homepage New Arrivals Section */
