@@ -235,7 +235,7 @@
 .explore-our-products {
   width: 100%;
   max-width: 1170px;
-  margin: 0 auto;
+  display: flex;
 }
 .explore-header {
   display: flex;
@@ -276,6 +276,7 @@
   font-size: 30px;
   gap: 20px;
   display: flex;
+  cursor: pointer;
 }
 .explore-arrow i {
   background-color: rgb(242, 242, 242);
@@ -286,40 +287,48 @@
   background-color: #db4444;
   color: white;
 }
-.explore-main-container {
+.explore-card {
+  overflow: hidden;
+}
+
+.exploreContainer {
+  position: relative;
+  left: 0;
+  top: 0;
   display: flex;
-  justify-content: center;
+  gap: 20px;
+  transition: all 0.5s;
+}
+.explore-card-item {
+  display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 20px;
 }
-.explore-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  justify-content: center;
-}
-.explore-wrapper .explore-product-box {
-  flex: 1 1 15rem;
-  justify-content: center;
-}
+
 .explore-product-box {
   display: flex;
   justify-content: center;
-  height: 322px;
+  height: fit-content;
   width: 270px;
   position: relative;
 }
 .explore-item {
-  width: 100%;
+  width: 250px;
   gap: 15px;
   display: flex;
   flex-direction: column;
 }
 .explore-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 250px;
   height: 250px;
+  background-color: #f5f5f5;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
 }
 .explore-product-box .explore-icon-product {
   position: absolute;

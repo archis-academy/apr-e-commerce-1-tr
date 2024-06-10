@@ -103,3 +103,87 @@ function flashSalesArrow(data) {
 }
 
 //HASIM - FLASHSALES SECTION END
+
+let exploreContainer = document.querySelector(".exploreContainer");
+
+const source = "https://fakestoreapi.com/products";
+async function getData() {
+  const res = await fetch(source);
+  const data = await res.json();
+  exploreData = data.slice(0, 16);
+  exploreArrow(exploreData);
+  exploreProduct(exploreData);
+}
+
+getData();
+
+function exploreProduct(data) {
+  const exploreContainer = document.querySelector(".exploreContainer");
+
+  const eleHTML = data.map((ele) => {
+    return `<div class="explore-card-item">
+       <div class="explore-product-box">
+            <div class="explore-item">
+              <div class="explore-media">
+                <div class="explore-image" style="background-image: url('${ele.image}');">
+                </div>
+                
+                <div class="explore-icon-product">
+                  <i class="ri-heart-line"></i>
+                  <i class="ri-eye-line"></i>
+                </div>
+                <div class="explore-text">Add To Cart</div>
+              </div>
+
+              <div class="explore-content">
+                <h3 class="explore-title-product">
+                  ${ele.title}
+                </h3>
+                <div class="explore-desc-product">
+                  <div class="explore-price">
+                    $${ele.price}
+                  </div>
+                  <div class="explore-rating">
+                    <div class="stars">
+                      <i class="ri-star-fill checked"></i>
+                      <i class="ri-star-fill checked"></i>
+                      <i class="ri-star-fill checked"></i>
+                      <i class="ri-star-fill unchecked"></i>
+                      <i class="ri-star-fill unchecked"></i>
+                    </div>
+                    <span class="mini-text">(35)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+</div>`;
+  });
+
+  exploreContainer.innerHTML = eleHTML;
+}
+
+function exploreArrow(data) {
+  const exploreContainer = document.querySelector(".exploreContainer");
+  const exploreWrappper = document.querySelector(".explore-cards");
+  const exploreItem = document.querySelectorAll(".explore-card-item");
+  console.log();
+  const exploreLeft = document.querySelector("#explore-arrow-left");
+  const exploreRight = document.querySelector("#explore-arrow-right");
+  let deger = 0;
+
+  exploreRight.addEventListener("click", () => {
+    const exploreWidth = exploreContainer.exploreWidth;
+    if (deger > (data.length - exploreWidth / 400) * -400) {
+      deger += -400;
+      exploreContainer.style.right = `${deger}px`;
+    }
+  });
+
+  exploreLeft.addEventListener("click", () => {
+    if (deger < 0) {
+      deger += 400;
+      exploreContainer.style.left = `${deger}px`;
+    }
+  });
+}
