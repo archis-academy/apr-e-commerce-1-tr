@@ -39,13 +39,13 @@ const wishList = JSON.parse(localStorage.getItem("wishlistProducts")) || [];
         return `<div class="wsh-card-item">
     <div class="wsh-card-image-container" style="background-image: url('${item.image}');"> <div class="wsh-card-icons-container">
         <div class="wsh-card-icons">
-          <a href="" class="wsh-icon" id="fav-icon-${item.id}" onclick="deleteFromWishlist(${item.id})">
+          <button href="" class="wsh-icon" id="fav-icon-${item.id}" onclick="deleteFromWishlist(${item.id})">
             <img src="./images/wishlist-page/icon-delete.png" alt="Delete">
-          </a>
+          </button>
           
         </div>
       </div>
-      <a href="" class="wsh-addCart" onclick="addToCart(${item.id})" >Add To Cart</a>
+      <button href="" class="wsh-addCart" onclick="addToCart(${item.id})" >Add To Cart</button>
     </div>
     <div class="wsh-card-name">${item.title}</div>
     <div class="wsh-card-amount">

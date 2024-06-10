@@ -180,10 +180,12 @@
   justify-content: center;
   align-items: center;
   transition: all 0.5s;
+  border: none;
 }
 
 .tpdr-icon:hover {
   box-shadow: 2px 2px 8px black, -2px -2px 8px black;
+  cursor: pointer;
 }
 
 .tpdr-icon.added-wish-list {
@@ -204,11 +206,12 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  border: none;
 }
 
 .tpdr-card-image-container:hover .tpdr-addCart {
   height: 40px;
-  text-decoration: none;
+  cursor: pointer;
 }
 
 .tpdr-card-name {
