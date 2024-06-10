@@ -744,3 +744,178 @@ input {
 
 /* HASIM / FOOTER END*/
 
+/* Homepage New Arrivals Section */
+.home-page-new-arrivals-section {
+  width: 100%;
+  max-width: 1190px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+.arrivals-header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.arrivals-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.arrivals-title span {
+  width: 20px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: var(--primaryColor);
+}
+.arrivals-title p {
+  color: var(--primaryColor);
+  font-family: var(--bodyFont);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+}
+.arrivals-subtitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 70px;
+}
+.arrivals-subtitle-desc {
+  color: black;
+  font-family: var(--titlesFont);
+  font-weight: 600;
+  font-size: 36px;
+}
+.new-arrivals-container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.new-arrivals-container .image-group-left {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+}
+.new-arrivals-container .image-group-right {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.arrivals-image-playstation,
+.arrivals-image-woman-with-hat,
+.arrivals-image-speakers,
+.arrivals-image-parfume {
+  transform: scale(1);
+  transition: transform 0.3s ease-in;
+}
+.arrivals-image-playstation:hover,
+.arrivals-image-woman-with-hat:hover,
+.arrivals-image-speakers:hover,
+.arrivals-image-parfume:hover {
+  transform: scale(1.2);
+}
+.arrivals-image-content {
+  overflow: hidden;
+}
+.arrivals-image-container-1,
+.arrivals-image-playstation {
+  width: 600px;
+  height: 600px;
+  border-radius: 6px;
+}
+.arrivals-image-container-2,
+.arrivals-image-woman-with-hat {
+  width: 570px;
+  height: 295px;
+  border-radius: 6px;
+}
+.arrivals-image-container-bottom,
+.arrivals-image-speakers,
+.arrivals-image-parfume {
+  width: 273px;
+  height: 282px;
+}
+.arrivals-image-container-bottom {
+  display: flex;
+  gap: 24px;
+}
+.overlay-text h2 {
+  font-family: var(--bodyFont);
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+}
+.overlay-text p {
+  font-family: var(--bodyFont);
+  font-size: 14px;
+  font-weight: 400;
+  color: white;
+}
+.overlay-text span {
+  font-family: var(--bodyFont);
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+}
+.overlay-text span:after {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  height: 3px;
+  width: 0px;
+  left: 15px;
+  bottom: -5px;
+  transition: 0.3s;
+}
+.overlay-text span:hover:after {
+  width: 75px;
+}
+.arrivals-image-container-1,
+.arrivals-image-container-2,
+.image-content-left,
+.image-content-right {
+  background-color: #000;
+  position: relative;
+  border-radius: 6px;
+}
+.arrivals-image-overlay {
+  display: none;
+  background-color: transparent;
+  position: absolute;
+  width: 100%;
+  bottom: 15px;
+  height: 110px;
+  justify-content: flex-start;
+  align-items: center;
+  color: #fff;
+  font-family: var(--bodyFont);
+  padding: 15px;
+}
+.image-group-left .arrivals-image-container-1:hover .arrivals-image-overlay {
+  display: flex;
+}
+.image-group-right .arrivals-image-container-2:hover .arrivals-image-overlay {
+  display: flex;
+}
+.arrivals-image-container-bottom
+  .image-content-left:hover
+  .arrivals-image-overlay {
+  display: flex;
+}
+.arrivals-image-container-bottom
+  .image-content-right:hover
+  .arrivals-image-overlay {
+  display: flex;
+}
+.arrivals-image-overlay .overlay-text {
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* End of Homepage New Arrivals Section */
