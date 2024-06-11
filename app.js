@@ -79,9 +79,48 @@ function renderFlashSalesProduct(data) {
     })
     .join("");
 
-  todaysCards.innerHTML = flashSaleproducts;
-}
+  //  BESTSELING-RENDER
 
+  const itemsContainer = document.querySelector(
+    ".best-selling-items-container"
+  );
+
+  const itemElements = data
+    .map((item) => {
+      const filledStars = Math.floor(item.rating.rate);
+      const halfStar = item.rating.rate % 1 !== 0;
+      const emptyStars = 5 - filledStars - (halfStar ? 1 : 0);
+
+      const starIcons = `
+        ${'<i class="bi bi-star-fill star"></i>'.repeat(filledStars)}
+        ${halfStar ? '<i class="bi bi-star-half star"></i>' : ""}
+        ${'<i class="bi bi-star star"></i>'.repeat(emptyStars)}
+      `;
+
+      return `
+        <div class="best-selling-item">
+          <img src="${item.image}" alt="${item.title}">
+          <h3>${item.title}</h3>
+          <p class="price">$${item.price}</p>
+          <p class="original-price">$${(item.price * 1.2).toFixed(2)}</p>
+          <p>${
+            item.description.length > 100
+              ? item.description.substring(0, 100) + "..."
+              : item.description
+          }</p>
+          <div class="rating">
+            ${starIcons}
+            <span class="review-text">${item.rating.rate} (${
+        item.rating.count
+      } reviews)</span>
+          </div>
+        </div>`;
+    })
+    .join("");
+
+  todaysCards.innerHTML = flashSaleproducts;
+  itemsContainer.innerHTML = itemElements;
+}
 //Add To Wishlist Codes
 function addToWishlist(productId) {
   const favIcon = document.getElementById(`fav-icon-${productId}`);
@@ -110,12 +149,10 @@ function addToWishlist(productId) {
 //Add to Cart Codes
 function addToCart(productId) {
   const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
-  let cartTotalQuantity = JSON.parse(localStorage.getItem("cartTotalQuantity")) || 0;
-  cartTotalQuantity ++;
-  localStorage.setItem(
-    "cartTotalQuantity",
-    cartTotalQuantity
-  );
+  let cartTotalQuantity =
+    JSON.parse(localStorage.getItem("cartTotalQuantity")) || 0;
+  cartTotalQuantity++;
+  localStorage.setItem("cartTotalQuantity", cartTotalQuantity);
   const isProductExist = cartProducts.some(
     (element) => element.id === productId
   );
@@ -123,7 +160,7 @@ function addToCart(productId) {
     const productToAdd = allProducts.find(
       (product) => product.id === productId
     );
-    productToAdd.cartCount =1;
+    productToAdd.cartCount = 1;
     localStorage.setItem(
       "cartProducts",
       JSON.stringify([...cartProducts, productToAdd])
@@ -171,53 +208,15 @@ function flashSalesArrow(data) {
 
 //HASIM - FLASHSALES SECTION END
 
+// YIGIT- BESTSELING PRODUCTS START
 document.addEventListener("DOMContentLoaded", function () {
   fetch("https://fakestoreapi.com/products")
     .then((response) => response.json())
     .then((data) => {
-      const itemsContainer = document.querySelector(
-        ".best-selling-items-container"
-      );
-
-      data.slice(0, 4).forEach((item) => {
-        const itemDiv = document.createElement("div");
-        itemDiv.classList.add("best-selling-item");
-
-        const itemImage = document.createElement("img");
-        itemImage.src = item.image;
-        itemImage.alt = item.title;
-
-        const itemTitle = document.createElement("h3");
-        itemTitle.textContent = item.title;
-
-        const itemPrice = document.createElement("p");
-        itemPrice.classList.add("price");
-        itemPrice.textContent = `$${item.price}`;
-
-        const itemOriginalPrice = document.createElement("p");
-        itemOriginalPrice.classList.add("original-price");
-        itemOriginalPrice.textContent = `$${(item.price * 1.2).toFixed(2)}`; // Just an example
-
-        const itemDescription = document.createElement("p");
-        itemDescription.textContent =
-          item.description.length > 100
-            ? item.description.substring(0, 100) + "..."
-            : item.description;
-
-        const itemRatings = document.createElement("div");
-        itemRatings.innerHTML = '<i class="bi bi-star-fill"></i> (65)';
-
-        itemDiv.appendChild(itemImage);
-        itemDiv.appendChild(itemTitle);
-        itemDiv.appendChild(itemPrice);
-        itemDiv.appendChild(itemOriginalPrice);
-        itemDiv.appendChild(itemDescription);
-        itemDiv.appendChild(itemRatings);
-
-        itemsContainer.appendChild(itemDiv);
-      });
+      renderFlashSalesProduct(data.slice(0, 6));
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
     });
 });
+// YIGIT- BESTSELING PRODUCTS END
