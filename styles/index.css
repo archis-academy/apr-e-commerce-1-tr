@@ -782,8 +782,7 @@ input {
 }
 .arrivals-subtitle-desc {
   color: black;
-  font-family: var(--titlesFont);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 36px;
 }
 .new-arrivals-container {
