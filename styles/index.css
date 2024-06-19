@@ -543,10 +543,12 @@ p {
 }
 
 /* Yigit Header End */
+/* Best Selling Products Start */
 .best-selling-products {
   max-width: 1920px;
   margin: 0 auto;
-  padding-left: 135px;
+  align-items: center;
+  justify-content: center;
 }
 .explane-best {
   width: 400px;
@@ -595,6 +597,11 @@ p {
   cursor: pointer;
 }
 
+.price-all {
+  display: flex;
+  gap: 10px;
+}
+
 .best-selling-items-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -603,11 +610,14 @@ p {
 }
 .best-selling-items-container h3 {
   font-family: "Poppins", sans-serif;
+  align-items: center;
+  display: flex;
+  height: 180px;
 }
 
 .best-selling-item img {
-  width: 230px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   position: relative;
   opacity: 1;
   justify-content: space-around;
@@ -629,3 +639,19 @@ p {
 .review-text {
   color: gray;
 }
+
+.best-selling-icon {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 34px;
+  height: 34px;
+}
+.best-selling-items-container i {
+  z-index: 99999;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  gap: 8px;
+}
+/* Best Selling Products End  */

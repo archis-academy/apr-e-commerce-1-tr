@@ -98,12 +98,20 @@ function renderFlashSalesProduct(data) {
       `;
 
       return `
-        <div class="best-selling-item">
-          <img src="${item.image}" alt="${item.title}">
+      <div class="best-selling-item">
+          <div class="best-selling-icon">
+      <i class="bi bi-bag "></i>
+      <i class="bi bi-heart"></i>
+    </div>
+        <img src="${item.image}" alt="${item.title}">
           <h3>${item.title}</h3>
+          <div class="price-all">
           <p class="price">$${item.price}</p>
           <p class="original-price">$${(item.price * 1.2).toFixed(2)}</p>
-          <p>${
+          <p>
+          </div> 
+          
+          ${
             item.description.length > 100
               ? item.description.substring(0, 100) + "..."
               : item.description
@@ -144,6 +152,7 @@ function addToWishlist(productId) {
     );
     localStorage.setItem("wishlistProducts", JSON.stringify(newProducts));
   }
+  
 }
 
 //Add to Cart Codes
