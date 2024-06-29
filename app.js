@@ -100,8 +100,8 @@ function renderFlashSalesProduct(data) {
       return `
       <div class="best-selling-item">
           <div class="best-selling-icon">
-      <i class="bi bi-bag "></i>
-      <i class="bi bi-heart"></i>
+      <i class="bi bi-bag  before"></i>
+      <i class="bi bi-heart after "></i>
     </div>
         <img src="${item.image}" alt="${item.title}">
           <h3>${item.title}</h3>
@@ -152,7 +152,6 @@ function addToWishlist(productId) {
     );
     localStorage.setItem("wishlistProducts", JSON.stringify(newProducts));
   }
-  
 }
 
 //Add to Cart Codes
