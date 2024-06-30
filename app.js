@@ -99,10 +99,12 @@ function renderFlashSalesProduct(data) {
 
       return `
       <div class="best-selling-item">
+         <div class"bsi__image-wrapper">
           <div class="best-selling-icon">
       <i class="bi bi-bag  before"></i>
       <i class="bi bi-heart after "></i>
     </div>
+         </div>
         <img src="${item.image}" alt="${item.title}">
           <h3>${item.title}</h3>
           <div class="price-all">

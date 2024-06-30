@@ -644,8 +644,9 @@ p {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  width: 34px;
-  height: 34px;
+  position: absolute;
+  right: 0;
+
 }
 .best-selling-items-container i {
   z-index: 99999;
@@ -655,4 +656,11 @@ p {
   gap: 8px;
 }
 
+.best-selling-item{
+  position: relative;
+}
+.bsi__image-wrapper{
+  position: relative;
+  
+}
 /* Best Selling Products End  */
