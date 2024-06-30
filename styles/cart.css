@@ -17,7 +17,8 @@ body {
 .cartpage-container {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 75%;
+  max-width: 1170px;
 }
 
 .crtt-header {
@@ -34,7 +35,8 @@ body {
 }
 
 .crt-header-top-wrapper {
-  width: 80%;
+  width: 75%;
+  max-width: 1170px;
   display: flex;
 }
 
@@ -297,11 +299,18 @@ body {
   flex-wrap: wrap;
   align-items: start;
 }
-.crt-coupon {
-  flex: 1;
+
+.crt-coupon-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   flex-wrap: wrap;
+  flex: 1;
+}
+
+.crt-coupon {
+  display: flex;
+  align-items: start;
 }
 
 .crt-coupon-input-container {
@@ -314,6 +323,7 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.5);
   font-family: var(--bodyFont);
   width: 100%;
+  color: black;
 }
 
 .crt-coupon input::placeholder {
@@ -345,6 +355,13 @@ body {
   background-color: white;
   color: black;
   border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.crt-coupon-container span {
+  font-family: var(--bodyFont);
+  font-size: 14px;
+  color: red;
+  display: none;
 }
 
 .crt-cart-total-container {
@@ -393,7 +410,8 @@ footer {
 }
 
 .crt-footer-container {
-  width: 80%;
+  max-width: 1170px;
+  width: 75%;
   display: flex;
   flex-direction: column;
   gap: 20px;

@@ -4,6 +4,12 @@ const day = document.getElementById("tdpr-day");
 const hour = document.getElementById("tdpr-hour");
 const minute = document.getElementById("tdpr-minute");
 const second = document.getElementById("tdpr-second");
+
+const ftrDay = document.getElementById("ftr-day");
+const ftrHour = document.getElementById("ftr-hour");
+const ftrMinute = document.getElementById("ftr-minute");
+const ftrSecond = document.getElementById("ftr-second");
+
 const countDown = (bitisZamani) => {
   const simdikiZaman = new Date().getTime();
   const kalanZaman = bitisZamani - simdikiZaman;
@@ -17,13 +23,17 @@ const countDown = (bitisZamani) => {
   hour.textContent = saatler < 10 ? `0${saatler}` : saatler;
   minute.textContent = dakikalar < 10 ? `0${dakikalar}` : dakikalar;
   second.textContent = saniyeler < 10 ? `0${saniyeler}` : saniyeler;
+  ftrDay.textContent = gunler < 10 ? `0${gunler}` : gunler;
+  ftrHour.textContent = saatler < 10 ? `0${saatler}` : saatler;
+  ftrMinute.textContent = dakikalar < 10 ? `0${dakikalar}` : dakikalar;
+  ftrSecond.textContent = saniyeler < 10 ? `0${saniyeler}` : saniyeler;
   if (kalanZaman <= 0) {
     clearInterval(countDownInterval);
   }
 };
 
 const countDownInterval = setInterval(() => {
-  countDown(new Date("2024-05-20 00:00:00").getTime());
+  countDown(new Date("2024-06-20 00:00:00").getTime());
 }, 1000);
 
 //Fetch API codes
@@ -36,6 +46,7 @@ async function getProducts() {
   flashSalesdata = products.slice(0, 8);
   flashSalesArrow(flashSalesdata);
   renderFlashSalesProduct(flashSalesdata);
+  changeImage(flashSalesdata);
 }
 
 getProducts();
@@ -52,17 +63,17 @@ function renderFlashSalesProduct(data) {
   }');"> <div class="tpdr-card-icons-container">
       <span class="tpdr-card-discount">-50%</span>
       <div class="tpdr-card-icons">
-        <a href="#" class="tpdr-icon" id="fav-icon-${
+        <a href="" class="tpdr-icon" id="fav-icon-${
           item.id
         }" onclick="addToWishlist(${item.id})">
           <img src="./images/todays-product/heartsmall.png" alt="Heart">
         </a>
-        <a href="#" class="tpdr-icon">
+        <a href="" class="tpdr-icon">
           <img src="./images/todays-product/quickview.png" alt="Quickview">
         </a>
       </div>
     </div>
-    <a href="#" class="tpdr-addCart" onclick="addToCart(${
+    <a href="" class="tpdr-addCart" onclick="addToCart(${
       item.id
     })" >Add To Cart</a>
   </div>
@@ -79,57 +90,57 @@ function renderFlashSalesProduct(data) {
     })
     .join("");
 
-  //  BESTSELING-RENDER
+//  BESTSELING-RENDER
 
-  const itemsContainer = document.querySelector(
-    ".best-selling-items-container"
-  );
+const itemsContainer = document.querySelector(
+  ".best-selling-items-container"
+);
 
-  const itemElements = data
-    .map((item) => {
-      const filledStars = Math.floor(item.rating.rate);
-      const halfStar = item.rating.rate % 1 !== 0;
-      const emptyStars = 5 - filledStars - (halfStar ? 1 : 0);
+const itemElements = data
+  .map((item) => {
+    const filledStars = Math.floor(item.rating.rate);
+    const halfStar = item.rating.rate % 1 !== 0;
+    const emptyStars = 5 - filledStars - (halfStar ? 1 : 0);
 
-      const starIcons = `
-        ${'<i class="bi bi-star-fill star"></i>'.repeat(filledStars)}
-        ${halfStar ? '<i class="bi bi-star-half star"></i>' : ""}
-        ${'<i class="bi bi-star star"></i>'.repeat(emptyStars)}
-      `;
+    const starIcons = `
+      ${'<i class="bi bi-star-fill star"></i>'.repeat(filledStars)}
+      ${halfStar ? '<i class="bi bi-star-half star"></i>' : ""}
+      ${'<i class="bi bi-star star"></i>'.repeat(emptyStars)}
+    `;
 
-      return `
-      <div class="best-selling-item">
-         <div class"bsi__image-wrapper">
-          <div class="best-selling-icon">
-      <i class="bi bi-bag  before"></i>
-      <i class="bi bi-heart after "></i>
-    </div>
-         </div>
-        <img src="${item.image}" alt="${item.title}">
-          <h3>${item.title}</h3>
-          <div class="price-all">
-          <p class="price">$${item.price}</p>
-          <p class="original-price">$${(item.price * 1.2).toFixed(2)}</p>
-          <p>
-          </div> 
-          
-          ${
-            item.description.length > 100
-              ? item.description.substring(0, 100) + "..."
-              : item.description
-          }</p>
-          <div class="rating">
-            ${starIcons}
-            <span class="review-text">${item.rating.rate} (${
-        item.rating.count
-      } reviews)</span>
-          </div>
-        </div>`;
-    })
-    .join("");
+    return `
+    <div class="best-selling-item">
+       <div class"bsi__image-wrapper">
+        <div class="best-selling-icon">
+    <i class="bi bi-bag  before"></i>
+    <i class="bi bi-heart after "></i>
+  </div>
+       </div>
+      <img src="${item.image}" alt="${item.title}">
+        <h3>${item.title}</h3>
+        <div class="price-all">
+        <p class="price">$${item.price}</p>
+        <p class="original-price">$${(item.price * 1.2).toFixed(2)}</p>
+        <p>
+        </div> 
+        
+        ${
+          item.description.length > 100
+            ? item.description.substring(0, 100) + "..."
+            : item.description
+        }</p>
+        <div class="rating">
+          ${starIcons}
+          <span class="review-text">${item.rating.rate} (${
+      item.rating.count
+    } reviews)</span>
+        </div>
+      </div>`;
+  })
+  .join("");
 
-  todaysCards.innerHTML = flashSaleproducts;
-  itemsContainer.innerHTML = itemElements;
+todaysCards.innerHTML = flashSaleproducts;
+itemsContainer.innerHTML = itemElements;
 }
 //Add To Wishlist Codes
 function addToWishlist(productId) {
@@ -160,17 +171,16 @@ function addToWishlist(productId) {
 function addToCart(productId) {
   const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
   let cartTotalQuantity =
-    JSON.parse(localStorage.getItem("cartTotalQuantity")) || 0;
-  cartTotalQuantity++;
-  localStorage.setItem("cartTotalQuantity", cartTotalQuantity);
+  JSON.parse(localStorage.getItem("cartTotalQuantity")) || 0;
+cartTotalQuantity++;
+localStorage.setItem("cartTotalQuantity", cartTotalQuantity);
   const isProductExist = cartProducts.some(
     (element) => element.id === productId
   );
   if (!isProductExist) {
     const productToAdd = allProducts.find(
       (product) => product.id === productId
-    );
-    productToAdd.cartCount = 1;
+    );    productToAdd.cartCount = 1;
     localStorage.setItem(
       "cartProducts",
       JSON.stringify([...cartProducts, productToAdd])

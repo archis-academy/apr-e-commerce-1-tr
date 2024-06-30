@@ -19,6 +19,7 @@
 
 .tpdr-container {
   width: 75%;
+  max-width: 1170px;
   display: flex;
   flex-direction: column;
 }
@@ -207,6 +208,7 @@
 
 .tpdr-card-image-container:hover .tpdr-addCart {
   height: 40px;
+  text-decoration: none;
 }
 
 .tpdr-card-name {
@@ -233,6 +235,7 @@
   text-decoration: line-through;
 }
 /*HASIM / TODAY'S PRODUCT END*/
+
 /* Yigit Header Start */
 p {
   display: block;
