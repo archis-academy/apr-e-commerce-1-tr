@@ -240,3 +240,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 // YIGIT- BESTSELING PRODUCTS END
+//HASIM FEATURED PRODUCTS SECTION START
+
+//Change Image Codes
+let currentIndex = 0;
+function changeImage(data) {
+  const ftrImage = document.querySelector("#ftr-image");
+  setInterval(() => {
+    ftrImage.style.opacity = 1;
+
+    setTimeout(() => {
+      ftrImage.style.opacity = 0;
+    }, 1500);
+
+    currentIndex = (currentIndex + 1) % data.length;
+    ftrImage.src = data[currentIndex].image;
+  }, 3000);
+}
+
+//HASIM FEATURED PRODUCTS SECTION END

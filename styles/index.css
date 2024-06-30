@@ -616,14 +616,16 @@ p {
   align-items: center;
   display: flex;
   height: 180px;
+  
 }
 
 .best-selling-item img {
-  width: 200px;
+  width: 150px;
   height: 200px;
   position: relative;
   opacity: 1;
   justify-content: space-around;
+  object-fit: contain;
 }
 .best-selling-item p.price {
   color: red;
